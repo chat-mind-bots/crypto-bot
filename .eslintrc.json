@@ -47,5 +47,6 @@
     "no-nested-ternary": "off",
     "import/prefer-default-export": "off",
     "require-jsdoc": 0
-  }
+  },
+  "ignorePatterns": ["**/*.d.ts", ".next"]
 }
