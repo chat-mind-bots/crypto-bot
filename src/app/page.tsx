@@ -71,7 +71,7 @@ export default function Home() {
         isLazy
       />
       <DynamicPng
-        name={"phone-comission"}
+        name={"phone-commission"}
         width={580}
         height={526}
         sizes="(max-width: 768px) 100%"
