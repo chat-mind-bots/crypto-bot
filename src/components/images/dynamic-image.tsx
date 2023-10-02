@@ -3,7 +3,7 @@ import { FC } from "react";
 import Image, { ImageProps } from "next/image";
 import { useTheme } from "next-themes";
 
-interface IOwnProps {
+export interface IDynamicImageProps {
   name: string;
   isLazy?: boolean;
   alt?: string;
@@ -12,8 +12,9 @@ interface IOwnProps {
   blurDataURLLight?: string;
   width: number;
   height: number;
+  ext: string;
 }
-export const DynamicImage: FC<IOwnProps> = ({
+export const DynamicImage: FC<IDynamicImageProps> = ({
   name,
   isLazy,
   alt,
@@ -22,6 +23,7 @@ export const DynamicImage: FC<IOwnProps> = ({
   sizes,
   blurDataURLDark,
   blurDataURLLight,
+  ext,
 }) => {
   const { resolvedTheme } = useTheme();
 
@@ -29,7 +31,7 @@ export const DynamicImage: FC<IOwnProps> = ({
     console.log(global?.document?.querySelector("html")?.getAttribute("class"));
     return `/${name}/${
       resolvedTheme !== undefined ? resolvedTheme : "dark"
-    }/${name}.png`;
+    }/${name}.${ext}`;
   };
 
   const additionalProps: Partial<ImageProps> = {

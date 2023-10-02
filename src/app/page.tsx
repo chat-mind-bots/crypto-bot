@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { DynamicImage } from "components/dynamic-image";
+import { DynamicPng } from "components/images/dynamic-png";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <DynamicImage
+      <DynamicPng
         name={"phone-mock"}
         width={336}
         height={693}
