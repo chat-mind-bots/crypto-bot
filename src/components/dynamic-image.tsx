@@ -20,7 +20,6 @@ export const DynamicImage: FC<IOwnProps> = ({ name, isLazy }) => {
     <Image
       src={getImageSrc()}
       alt={"phone mock"}
-      className="dark:invert"
       {...additionalProps}
       width={336}
       height={693}
