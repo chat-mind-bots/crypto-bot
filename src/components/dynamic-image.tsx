@@ -17,6 +17,7 @@ export const DynamicImage: FC<IOwnProps> = ({ name }) => {
       alt={"phone mock"}
       className="dark:invert"
       priority
+      loading={"lazy"}
       width={336}
       height={693}
     />

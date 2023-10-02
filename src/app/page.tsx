@@ -1,16 +1,10 @@
 import Image from "next/image";
+import { DynamicImage } from "components/dynamic-image";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Image
-        src={"./phone-mock.png"}
-        alt={"phone mock"}
-        className="dark:invert"
-        priority
-        width={336}
-        height={693}
-      />
+      <DynamicImage name={"phone-mock.png"} />
       <Image
         src="./vercel.svg"
         alt="Vercel Logo"
