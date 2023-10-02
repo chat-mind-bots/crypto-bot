@@ -1,14 +1,19 @@
 import { FC } from "react";
-import Image from "next/image";
+import Image, { ImageProps } from "next/image";
 import * as process from "process";
 
 interface IOwnProps {
   name: string;
+  isLazy?: boolean;
 }
-export const DynamicImage: FC<IOwnProps> = ({ name }) => {
+export const DynamicImage: FC<IOwnProps> = ({ name, isLazy }) => {
   const getImageSrc = () => {
     const prefix = process.env.MODE === "DEVELOP" ? "/" : "./";
     return `${prefix}${name}`;
+  };
+
+  const additionalProps: Partial<ImageProps> = {
+    ...(isLazy ? { loading: "lazy" } : { priority: true }),
   };
 
   return (
@@ -16,8 +21,7 @@ export const DynamicImage: FC<IOwnProps> = ({ name }) => {
       src={getImageSrc()}
       alt={"phone mock"}
       className="dark:invert"
-      priority
-      loading={"lazy"}
+      {...additionalProps}
       width={336}
       height={693}
     />
