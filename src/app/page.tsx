@@ -6,75 +6,73 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <DynamicPng
         name={"phone-mock"}
-        width={336}
-        height={693}
-        sizes="(max-width: 768px) 100%"
+        // width={336}
+        // height={693}
+        sizes="(max-width: 768px) 100vw, 336px"
       />
       <DynamicPng
         name={"photo-bot1"}
-        width={96}
-        height={96}
-        sizes="(max-width: 768px) 100%"
+        // width={96}
+        // height={96}
+        sizes="(max-width: 768px) 100vw, 96px"
       />
       <DynamicPng
         name={"photo-bot2"}
-        width={96}
-        height={96}
-        sizes="(max-width: 768px) 100%"
+        // width={96}
+        // height={96}
+        sizes="(max-width: 768px) 100vw, 96px"
       />
       <DynamicPng
         name={"photo-bot3"}
-        width={96}
-        height={96}
-        quality={40}
-        sizes="(max-width: 768px) 100%"
+        // width={96}
+        // height={96}
+        sizes="(max-width: 768px) 100vw, 96px"
       />
       <DynamicPng
         name={"photo-bot4"}
-        width={96}
-        height={96}
-        sizes="(max-width: 768px) 100%"
+        // width={96}
+        // height={96}
+        sizes="(max-width: 768px) 100vw, 96px"
       />
       <DynamicPng
         name={"photo-bot5"}
-        width={96}
-        height={96}
-        sizes="(max-width: 768px) 100%"
+        // width={96}
+        // height={96}
+        sizes="(max-width: 768px) 100vw, 96px"
       />
       <DynamicPng
         name={"use-cases1"}
-        width={488}
-        quality={40}
-        height={488}
-        sizes="(max-width: 768px) 100%"
+        // width={488}
+        // height={488}
+        sizes="(max-width: 768px) 100vw, 488px"
         isLazy
       />
       <DynamicPng
         name={"use-cases2"}
-        width={488}
-        height={488}
-        sizes="(max-width: 768px) 100%"
+        // width={488}
+        // height={488}
+        sizes="(max-width: 768px) 100vw, 488px"
         isLazy
       />
       <DynamicPng
         name={"use-cases3"}
-        width={488}
-        height={488}
-        sizes="(max-width: 768px) 100%"
+        // width={488}
+        // height={488}
+        sizes="(max-width: 768px) 100vw, 488px"
         isLazy
       />
       <DynamicPng
         name={"tg-chat-background"}
-        width={580}
-        height={526}
-        sizes="(max-width: 768px) 100%"
+        // width={580}
+        // height={526}
+        sizes="(max-width: 768px) 100vw, 580px"
         isLazy
       />
       <DynamicPng
         name={"phone-commission"}
-        width={580}
-        height={526}
-        sizes="(max-width: 768px) 100%"
+        // width={580}
+        // height={526}
+        sizes="(max-width: 768px) 100vw, 580px"
         isLazy
       />
       <Image

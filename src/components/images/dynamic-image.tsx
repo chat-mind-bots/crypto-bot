@@ -10,8 +10,8 @@ export interface IDynamicImageProps {
   sizes?: string;
   blurDataURLDark?: string;
   blurDataURLLight?: string;
-  width: number;
-  height: number;
+  width?: number;
+  height?: number;
   quality?: number;
   ext: string;
 }
