@@ -12,6 +12,7 @@ export interface IDynamicImageProps {
   blurDataURLLight?: string;
   width: number;
   height: number;
+  quality?: number;
   ext: string;
 }
 export const DynamicImage: FC<IDynamicImageProps> = ({
@@ -19,6 +20,7 @@ export const DynamicImage: FC<IDynamicImageProps> = ({
   isLazy,
   alt,
   width,
+  quality,
   height,
   sizes,
   blurDataURLDark,
@@ -50,6 +52,7 @@ export const DynamicImage: FC<IDynamicImageProps> = ({
       alt={alt ?? ""}
       {...additionalProps}
       width={width}
+      quality={quality}
       height={height}
       sizes={sizes}
     />
