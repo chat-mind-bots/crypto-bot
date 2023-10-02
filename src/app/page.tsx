@@ -8,21 +8,18 @@ export default function Home() {
         name={"phone-mock"}
         width={336}
         height={693}
-        quality={40}
         sizes="(max-width: 768px) 100%"
       />
       <DynamicPng
         name={"photo-bot1"}
         width={96}
         height={96}
-        quality={40}
         sizes="(max-width: 768px) 100%"
       />
       <DynamicPng
         name={"photo-bot2"}
         width={96}
         height={96}
-        quality={40}
         sizes="(max-width: 768px) 100%"
       />
       <DynamicPng
@@ -36,14 +33,12 @@ export default function Home() {
         name={"photo-bot4"}
         width={96}
         height={96}
-        quality={40}
         sizes="(max-width: 768px) 100%"
       />
       <DynamicPng
         name={"photo-bot5"}
         width={96}
         height={96}
-        quality={40}
         sizes="(max-width: 768px) 100%"
       />
       <DynamicPng
@@ -57,7 +52,6 @@ export default function Home() {
       <DynamicPng
         name={"use-cases2"}
         width={488}
-        quality={40}
         height={488}
         sizes="(max-width: 768px) 100%"
         isLazy
@@ -66,6 +60,20 @@ export default function Home() {
         name={"use-cases3"}
         width={488}
         height={488}
+        sizes="(max-width: 768px) 100%"
+        isLazy
+      />
+      <DynamicPng
+        name={"tg-chat-background"}
+        width={580}
+        height={526}
+        sizes="(max-width: 768px) 100%"
+        isLazy
+      />
+      <DynamicPng
+        name={"phone-comission"}
+        width={580}
+        height={526}
         quality={40}
         sizes="(max-width: 768px) 100%"
         isLazy
