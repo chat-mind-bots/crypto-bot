@@ -8,8 +8,8 @@ export default function Home() {
         alt={"phone mock"}
         className="dark:invert"
         priority
-        width={300}
-        height={900}
+        width={336}
+        height={693}
       />
       <Image
         src="./vercel.svg"
