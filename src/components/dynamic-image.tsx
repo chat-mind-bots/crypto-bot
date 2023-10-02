@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Image, { ImageProps } from "next/image";
-import * as process from "process";
+// import * as process from "process";
 
 interface IOwnProps {
   name: string;
@@ -8,8 +8,8 @@ interface IOwnProps {
 }
 export const DynamicImage: FC<IOwnProps> = ({ name, isLazy }) => {
   const getImageSrc = () => {
-    const prefix = process.env.MODE === "DEVELOP" ? "/" : "./";
-    return `${prefix}${name}`;
+    // const prefix = process.env.MODE === "DEVELOP" ? "/" : "./";
+    return `/${name}`;
   };
 
   const additionalProps: Partial<ImageProps> = {
