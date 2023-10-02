@@ -74,7 +74,6 @@ export default function Home() {
         name={"phone-comission"}
         width={580}
         height={526}
-        quality={40}
         sizes="(max-width: 768px) 100%"
         isLazy
       />
