@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "next": "latest",
+    "next-themes": "^0.2.1",
     "react": "latest",
     "react-dom": "latest"
   },
@@ -36,10 +37,10 @@
     "eslint-plugin-security": "^1.7.1",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-sonarjs": "^0.21.0",
+    "husky": "^8.0.0",
     "postcss": "latest",
     "prettier": "^3.0.3",
     "tailwindcss": "latest",
-    "typescript": "latest",
-    "husky": "^8.0.0"
+    "typescript": "latest"
   }
 }

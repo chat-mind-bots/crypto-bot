@@ -4,7 +4,12 @@ import { DynamicImage } from "components/dynamic-image";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <DynamicImage name={"phone-mock.png"} />
+      <DynamicImage
+        name={"phone-mock"}
+        width={336}
+        height={693}
+        sizes="(max-width: 768px) 100%"
+      />
       <Image
         src="./vercel.svg"
         alt="Vercel Logo"
