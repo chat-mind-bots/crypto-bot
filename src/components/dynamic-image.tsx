@@ -8,7 +8,8 @@ interface IOwnProps {
   isLazy?: boolean;
   alt?: string;
   sizes?: string;
-  blurDataURL?: string;
+  blurDataURLDark?: string;
+  blurDataURLLight?: string;
   width: number;
   height: number;
 }
@@ -19,17 +20,26 @@ export const DynamicImage: FC<IOwnProps> = ({
   width,
   height,
   sizes,
-  blurDataURL,
+  blurDataURLDark,
+  blurDataURLLight,
 }) => {
   const { resolvedTheme } = useTheme();
 
   const getImageSrc = () => {
-    return `/${name}/${resolvedTheme}/${name}.png`;
+    console.log(global?.document?.querySelector("html")?.getAttribute("class"));
+    return `/${name}/${
+      resolvedTheme !== undefined ? resolvedTheme : "dark"
+    }/${name}.png`;
   };
 
   const additionalProps: Partial<ImageProps> = {
     ...(isLazy ? { loading: "lazy" } : { priority: true }),
-    ...(blurDataURL ? { blurDataURL, placeholder: "blur" } : {}),
+    ...(blurDataURLLight
+      ? { blurDataURL: blurDataURLLight, placeholder: "blur" }
+      : {}),
+    ...(blurDataURLDark
+      ? { blurDataURL: blurDataURLDark, placeholder: "blur" }
+      : {}),
   };
 
   return (
