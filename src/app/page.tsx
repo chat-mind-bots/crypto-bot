@@ -10,57 +10,6 @@ export default function Home() {
         height={693}
         sizes="(max-width: 768px) 100%"
       />
-      <DynamicPng
-        name={"photo-bot1"}
-        width={96}
-        height={96}
-        sizes="(max-width: 768px) 100%"
-      />
-      <DynamicPng
-        name={"photo-bot2"}
-        width={96}
-        height={96}
-        sizes="(max-width: 768px) 100%"
-      />
-      <DynamicPng
-        name={"photo-bot3"}
-        width={96}
-        height={96}
-        sizes="(max-width: 768px) 100%"
-      />
-      <DynamicPng
-        name={"photo-bot4"}
-        width={96}
-        height={96}
-        sizes="(max-width: 768px) 100%"
-      />
-      <DynamicPng
-        name={"photo-bot5"}
-        width={96}
-        height={96}
-        sizes="(max-width: 768px) 100%"
-      />
-      <DynamicPng
-        name={"use-cases1"}
-        width={488}
-        height={488}
-        sizes="(max-width: 768px) 100%"
-        isLazy
-      />
-      <DynamicPng
-        name={"use-cases2"}
-        width={488}
-        height={488}
-        sizes="(max-width: 768px) 100%"
-        isLazy
-      />
-      <DynamicPng
-        name={"use-cases3"}
-        width={488}
-        height={488}
-        sizes="(max-width: 768px) 100%"
-        isLazy
-      />
       <Image
         src="./vercel.svg"
         alt="Vercel Logo"
