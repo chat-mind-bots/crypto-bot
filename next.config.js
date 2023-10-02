@@ -1,5 +1,8 @@
+// eslint-disable-next-line valid-jsdoc
 /** @type {import('next').NextConfig} */
-const nextConfig = { trailingSlash: true, output: "export" };
+const nextConfig = () => {
+  return { trailingSlash: true, output: "export" };
+};
 
 module.exports = nextConfig;
 
