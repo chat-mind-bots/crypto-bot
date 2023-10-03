@@ -8,57 +8,71 @@ export default function Home() {
         name={"phone-mock"}
         width={336}
         height={693}
-        sizes="(max-width: 768px) 100%"
+        sizes="(max-width: 768px) 100vw, 336px"
       />
       <DynamicPng
         name={"photo-bot1"}
         width={96}
         height={96}
-        sizes="(max-width: 768px) 100%"
+        sizes="(max-width: 768px) 100vw, 96px"
       />
       <DynamicPng
         name={"photo-bot2"}
         width={96}
         height={96}
-        sizes="(max-width: 768px) 100%"
+        sizes="(max-width: 768px) 100vw, 96px"
       />
       <DynamicPng
         name={"photo-bot3"}
         width={96}
         height={96}
-        sizes="(max-width: 768px) 100%"
+        sizes="(max-width: 768px) 100vw, 96px"
       />
       <DynamicPng
         name={"photo-bot4"}
         width={96}
         height={96}
-        sizes="(max-width: 768px) 100%"
+        sizes="(max-width: 768px) 100vw, 96px"
       />
       <DynamicPng
         name={"photo-bot5"}
         width={96}
         height={96}
-        sizes="(max-width: 768px) 100%"
+        sizes="(max-width: 768px) 100vw, 96px"
       />
       <DynamicPng
         name={"use-cases1"}
         width={488}
         height={488}
-        sizes="(max-width: 768px) 100%"
+        sizes="(max-width: 768px) 100vw, 488px"
         isLazy
       />
       <DynamicPng
         name={"use-cases2"}
         width={488}
         height={488}
-        sizes="(max-width: 768px) 100%"
+        sizes="(max-width: 768px) 100vw, 488px"
         isLazy
       />
       <DynamicPng
         name={"use-cases3"}
         width={488}
         height={488}
-        sizes="(max-width: 768px) 100%"
+        sizes="(max-width: 768px) 100vw, 488px"
+        isLazy
+      />
+      <DynamicPng
+        name={"tg-chat-background"}
+        width={580}
+        height={526}
+        sizes="(max-width: 768px) 100vw, 580px"
+        isLazy
+      />
+      <DynamicPng
+        name={"phone-commission"}
+        width={580}
+        height={526}
+        sizes="(max-width: 768px) 100vw, 580px"
         isLazy
       />
       <Image
@@ -67,7 +81,6 @@ export default function Home() {
         className="dark:invert"
         width={100}
         height={24}
-        priority
       />
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
