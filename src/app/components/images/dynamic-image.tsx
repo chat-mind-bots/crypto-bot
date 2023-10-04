@@ -6,7 +6,7 @@ import { useTheme } from "next-themes";
 export interface IDynamicImageProps {
   name: string;
   isLazy?: boolean;
-  alt?: string;
+  alt: string;
   sizes?: string;
   blurDataURLDark?: string;
   blurDataURLLight?: string;
@@ -47,7 +47,7 @@ export const DynamicImage: FC<IDynamicImageProps> = ({
   return (
     <Image
       src={getImageSrc()}
-      alt={alt ?? ""}
+      alt={alt}
       {...additionalProps}
       width={width}
       height={height}

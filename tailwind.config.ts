@@ -8,6 +8,16 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    colors: {
+      transparent: "transparent",
+      current: "currentColor",
+      white: "#ffffff",
+      blue: "#41A4DF",
+      deepBlue: "#297EE2",
+      gray: "#A3A7AE",
+      dark: "#0D0D12",
+      bgLight: "#F7F9FB",
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
