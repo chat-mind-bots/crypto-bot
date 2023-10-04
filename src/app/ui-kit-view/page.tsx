@@ -9,21 +9,26 @@ import { H4 } from "app/components/ui-kit/Typography/h4";
 import { BaseText } from "app/components/ui-kit/Typography/base-text";
 import { ButtonText } from "app/components/ui-kit/Typography/button-text";
 import { DescriptionText } from "app/components/ui-kit/Typography/description-text";
+import { Layout } from "app/components/ui-kit/layout";
 export default function UiKit() {
   return (
-    <div className={classNames("flex", "flex-col", "min-h-screen", "gap-2.5")}>
-      <Button variant={"primary"} text={"Get started 1"} />
-      <Button variant={"secondary"} text={"Get started"} />
-      <Button variant={"outlined"} text={"Get started"} />
-      <Link text={"Link"} href={"https://google.com"} title={"Google link"} />
-      <Tag text={"ETH"} />
-      <H1>H1 header</H1>
-      <H2>H2 header</H2>
-      <H3>H3 header</H3>
-      <H4>H4 header</H4>
-      <BaseText>base-text</BaseText>
-      <ButtonText>button-text</ButtonText>
-      <DescriptionText>DESCRIPTION</DescriptionText>
-    </div>
+    <Layout>
+      <div
+        className={classNames("flex", "flex-col", "min-h-screen", "gap-2.5")}
+      >
+        <Button variant={"primary"} text={"Get started 1"} />
+        <Button variant={"secondary"} text={"Get started"} />
+        <Button variant={"outlined"} text={"Get started"} />
+        <Link text={"Link"} href={"https://google.com"} title={"Google link"} />
+        <Tag text={"ETH"} />
+        <H1>H1 header</H1>
+        <H2>H2 header</H2>
+        <H3>H3 header</H3>
+        <H4>H4 header</H4>
+        <BaseText>base-text</BaseText>
+        <ButtonText>button-text</ButtonText>
+        <DescriptionText>DESCRIPTION</DescriptionText>
+      </div>
+    </Layout>
   );
 }
