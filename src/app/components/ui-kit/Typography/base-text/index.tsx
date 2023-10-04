@@ -7,7 +7,7 @@ interface IOwnProps {
 
 export const BaseText: FC<IOwnProps> = ({ children }) => {
   return (
-    <span
+    <p
       className={classNames(
         "md:text-[20px]",
         "text-[18px]",
@@ -17,6 +17,6 @@ export const BaseText: FC<IOwnProps> = ({ children }) => {
       )}
     >
       {children}
-    </span>
+    </p>
   );
 };
