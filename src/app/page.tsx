@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { DynamicPng } from "components/images/dynamic-png";
+import { DynamicPng } from "app/components/images/dynamic-png";
 
 export default function Home() {
   return (
@@ -9,36 +9,42 @@ export default function Home() {
         width={336}
         height={693}
         sizes="(max-width: 768px) 100%"
+        alt={"Phone"}
       />
       <DynamicPng
         name={"photo-bot1"}
         width={96}
         height={96}
         sizes="(max-width: 768px) 100%"
+        alt={"Bot - 1"}
       />
       <DynamicPng
         name={"photo-bot2"}
         width={96}
         height={96}
         sizes="(max-width: 768px) 100%"
+        alt={"bot - 2"}
       />
       <DynamicPng
         name={"photo-bot3"}
         width={96}
         height={96}
         sizes="(max-width: 768px) 100%"
+        alt={"bot - 3"}
       />
       <DynamicPng
         name={"photo-bot4"}
         width={96}
         height={96}
         sizes="(max-width: 768px) 100%"
+        alt={"bot 4"}
       />
       <DynamicPng
         name={"photo-bot5"}
         width={96}
         height={96}
         sizes="(max-width: 768px) 100%"
+        alt={"bot 5"}
       />
       <DynamicPng
         name={"use-cases1"}
@@ -46,6 +52,7 @@ export default function Home() {
         height={488}
         sizes="(max-width: 768px) 100%"
         isLazy
+        alt={"use-case 1"}
       />
       <DynamicPng
         name={"use-cases2"}
@@ -53,6 +60,7 @@ export default function Home() {
         height={488}
         sizes="(max-width: 768px) 100%"
         isLazy
+        alt={"use-case 2"}
       />
       <DynamicPng
         name={"use-cases3"}
@@ -60,6 +68,7 @@ export default function Home() {
         height={488}
         sizes="(max-width: 768px) 100%"
         isLazy
+        alt={"use-case 3"}
       />
       <Image
         src="./vercel.svg"

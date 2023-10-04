@@ -15,12 +15,14 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "classnames": "^2.3.2",
     "next": "latest",
     "next-themes": "^0.2.1",
     "react": "latest",
     "react-dom": "latest"
   },
   "devDependencies": {
+    "@savvywombat/tailwindcss-grid-areas": "^3.1.0",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
