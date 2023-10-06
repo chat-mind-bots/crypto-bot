@@ -20,13 +20,32 @@ const config: Config = {
       bgDark: "#18181D",
     },
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      gridTemplateAreas: {
+        description: [
+          "currency currency currency currency currency currency currency currency currency currency currency currency",
+          "click click click click click stat stat stat stat stat stat stat",
+          "exchange exchange exchange exchange exchange stat stat stat stat stat stat stat",
+          "send send send send send send send payment payment payment payment payment",
+        ],
+        descriptionMobile: [
+          "currency",
+          "click",
+          "exchange",
+          "stat",
+          "send",
+          "payment",
+        ],
+      },
+      gridTemplateColumns: {
+        description: "repeat(12, 1fr);",
+        descriptionMobile: "1fr",
+      },
+      gridTemplateRows: {
+        description: "345px 366px 366px 510px",
+        descriptionMobile: "repeat(5, auto)",
       },
     },
   },
-  plugins: [],
+  plugins: [require("@savvywombat/tailwindcss-grid-areas")],
 };
 export default config;
