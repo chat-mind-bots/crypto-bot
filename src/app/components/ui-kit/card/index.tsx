@@ -1,13 +1,14 @@
 import { FC, ReactNode } from "react";
 import { BaseText } from "app/components/ui-kit/Typography/base-text";
-import { H2 } from "app/components/ui-kit/Typography/h2";
 import classNames from "classnames";
+import { H3 } from "app/components/ui-kit/Typography/h3";
 
 interface IOwnProps {
   title: string;
   description: ReactNode;
   topContent?: ReactNode;
   bottomContent?: ReactNode;
+  className?: string;
 }
 
 export const Card: FC<IOwnProps> = ({
@@ -15,6 +16,7 @@ export const Card: FC<IOwnProps> = ({
   topContent,
   description,
   title,
+  className,
 }) => {
   return (
     <div
@@ -26,6 +28,7 @@ export const Card: FC<IOwnProps> = ({
         "md:py-[42px]",
         "p-[32px]",
         "gap-[24px]",
+        className,
       )}
     >
       {topContent}
@@ -37,7 +40,7 @@ export const Card: FC<IOwnProps> = ({
           "gap-[16px]",
         )}
       >
-        <H2>{title}</H2>
+        <H3>{title}</H3>
         <BaseText>{description}</BaseText>
       </div>
       {bottomContent}
