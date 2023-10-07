@@ -12,8 +12,10 @@ export const DoubleCard: FC<IOwnProps> = ({ firstContent, secondContent }) => {
         "grid",
         "w-full",
         "md:grid-cols-doubleCard",
-        "h-[497px]",
-        "md:h-auto",
+        "h-[565px]",
+        "md:h-[488px]",
+        "grid-rows-doubleCardMobile",
+        "md:grid-rows-doubleCard",
       )}
     >
       {firstContent}

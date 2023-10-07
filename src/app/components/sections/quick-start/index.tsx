@@ -18,8 +18,8 @@ export const QuickStartSection = () => {
         secondContent={<GradientCard type={"violet"} />}
       />
       <DoubleCard
-        firstContent={<div>Crypto Pay API Request</div>}
-        secondContent={<GradientCard type={"orange"} />}
+        firstContent={<GradientCard type={"orange"} />}
+        secondContent={<div>Crypto Pay API Request</div>}
       />
       <DoubleCard
         firstContent={<div>Getting updates</div>}
