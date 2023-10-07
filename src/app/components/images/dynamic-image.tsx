@@ -28,9 +28,9 @@ export const DynamicImage: FC<IDynamicImageProps> = ({
   const { resolvedTheme } = useTheme();
 
   const getImageSrc = () => {
-    console.log(global?.document?.querySelector("html")?.getAttribute("class"));
     return `/${name}/${
-      resolvedTheme !== undefined ? resolvedTheme : "dark"
+      // resolvedTheme !== undefined ? resolvedTheme : "dark"
+      resolvedTheme !== undefined ? resolvedTheme : "light"
     }/${name}.${ext}`;
   };
 
