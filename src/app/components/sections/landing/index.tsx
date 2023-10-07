@@ -21,6 +21,7 @@ export const LandingSection = () => {
         height={693}
         sizes="(max-width: 768px) 100%"
         alt={"Phone"}
+        priority={true}
       />
     </section>
   );

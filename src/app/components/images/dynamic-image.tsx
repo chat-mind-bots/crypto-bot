@@ -6,6 +6,7 @@ import { useTheme } from "next-themes";
 export interface IDynamicImageProps {
   name: string;
   isLazy?: boolean;
+  priority?: boolean;
   alt: string;
   sizes?: string;
   blurDataURLDark?: string;
@@ -24,13 +25,14 @@ export const DynamicImage: FC<IDynamicImageProps> = ({
   blurDataURLDark,
   blurDataURLLight,
   ext,
+  priority,
 }) => {
   const { resolvedTheme } = useTheme();
 
   const getImageSrc = () => {
-    console.log(global?.document?.querySelector("html")?.getAttribute("class"));
     return `/${name}/${
-      resolvedTheme !== undefined ? resolvedTheme : "dark"
+      // resolvedTheme !== undefined ? resolvedTheme : "dark"
+      resolvedTheme !== undefined ? resolvedTheme : "light"
     }/${name}.${ext}`;
   };
 
@@ -42,6 +44,7 @@ export const DynamicImage: FC<IDynamicImageProps> = ({
     ...(blurDataURLDark
       ? { blurDataURL: blurDataURLDark, placeholder: "blur" }
       : {}),
+    ...(priority ? { priority: true } : {}),
   };
 
   return (
