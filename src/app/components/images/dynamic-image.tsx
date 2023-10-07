@@ -6,6 +6,7 @@ import { useTheme } from "next-themes";
 export interface IDynamicImageProps {
   name: string;
   isLazy?: boolean;
+  priority?: boolean;
   alt: string;
   sizes?: string;
   blurDataURLDark?: string;
@@ -24,6 +25,7 @@ export const DynamicImage: FC<IDynamicImageProps> = ({
   blurDataURLDark,
   blurDataURLLight,
   ext,
+  priority,
 }) => {
   const { resolvedTheme } = useTheme();
 
@@ -42,6 +44,7 @@ export const DynamicImage: FC<IDynamicImageProps> = ({
     ...(blurDataURLDark
       ? { blurDataURL: blurDataURLDark, placeholder: "blur" }
       : {}),
+    ...(priority ? { priority: true } : {}),
   };
 
   return (
