@@ -39,10 +39,18 @@ const config: Config = {
       gridTemplateColumns: {
         description: "repeat(12, 1fr);",
         descriptionMobile: "1fr",
+        doubleCard: "50% 50%",
       },
       gridTemplateRows: {
         description: "345px 366px 366px 510px",
         descriptionMobile: "repeat(5, auto)",
+        doubleCard: "1fr",
+        doubleCardMobile: "50% 50%",
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
   },

@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { Card } from "app/components/ui-kit/card";
+import { Link } from "app/components/ui-kit/link";
 
 export const DescriptionSection = () => {
   return (
@@ -20,40 +21,96 @@ export const DescriptionSection = () => {
       <Card
         title={"Accept a wide range of cryptocurrencies"}
         description={
-          "Bill any supported cryptocurrencies with asset parameter in GetInvoice method"
+          <>
+            Bill any supported cryptocurrencies with asset parameter in{" "}
+            <Link
+              text={"GetInvoice"}
+              title={"Get invoice method"}
+              href={"https://google.com/"}
+            />{" "}
+            method
+          </>
         }
         className={"grid-in-currency"}
       />
       <Card
         title={"One click to start"}
         description={
-          "Open @CryptoBot, go to Crypto Pay and tap Create App to get API Token"
+          <>
+            Open{" "}
+            <Link
+              text={"@CryptoBot"}
+              title={"Cryptobot open link"}
+              href={"https://t.me/CryptoBot"}
+            />
+            , go to Crypto Pay and tap Create App to get API Token
+          </>
         }
         className={"grid-in-click"}
       />
       <Card
         title={"Payment statistics"}
         description={
-          "Open @CryptoBot, go to Crypto Pay and My Apps, App Name to get Statistics"
+          <>
+            Open{" "}
+            <Link
+              text={"@CryptoBot"}
+              title={"Cryptobot open link"}
+              href={"https://t.me/CryptoBot"}
+            />
+            , go to{" "}
+            <Link
+              text={"Crypto Pay"}
+              title={"Crypto Pay"}
+              href={"https://google.com"}
+            />{" "}
+            and My Apps, App Name to get Statistics
+          </>
         }
         className={"grid-in-stat"}
       />
       <Card
         title={"Real-time exchange rates"}
         description={
-          "Request up to date currency rate with the getExchangeRates API method"
+          <>
+            Request up to date currency rate with the{" "}
+            <Link
+              text={"getExchangeRates"}
+              title={"Get exchange rates method link"}
+              href={"https://google.com"}
+            />{" "}
+            API method
+          </>
         }
         className={"grid-in-exchange"}
       />
       <Card
         title={"Send coins to users"}
-        description={"Automate payouts to users with transfer API method"}
+        description={
+          <>
+            Automate payouts to users with{" "}
+            <Link
+              text={"transfer"}
+              title={"Transfer link"}
+              href={"https://google.com/transfer"}
+            />{" "}
+            API method
+          </>
+        }
         className={"grid-in-send"}
       />
       <Card
         title={"Anonymous payments"}
         description={
-          "Use allow_anonymous parameter in createInvoice method to give user an option to remain private"
+          <>
+            Use allow_anonymous parameter in{" "}
+            <Link
+              text={"createInvoice"}
+              title={"CreateInvocie link"}
+              href={"https://google.com/transfer"}
+            />{" "}
+            method to give user an option to remain private
+          </>
         }
         className={"grid-in-payment"}
       />
