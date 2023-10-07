@@ -39,6 +39,7 @@ const config: Config = {
       gridTemplateColumns: {
         description: "repeat(12, 1fr);",
         descriptionMobile: "1fr",
+        doubleCard: "50% 50%",
       },
       gridTemplateRows: {
         description: "345px 366px 366px 510px",
