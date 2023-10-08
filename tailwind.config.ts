@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  mode: "jit",
   darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -13,11 +14,17 @@ const config: Config = {
       current: "currentColor",
       white: "#ffffff",
       blue: "#41A4DF",
+      bgBlue: "#8EC5FC",
       deepBlue: "#297EE2",
+      bgLightBlue: "#C2E9FB",
+      bgLightDarkBlue: "#A1C4FD",
       gray: "#A3A7AE",
       dark: "#0D0D12",
       bgLight: "#F7F9FB",
       bgDark: "#18181D",
+      rose: "#FCB69F",
+      pink: "#FFECD2",
+      purple: "#E0C3FC",
     },
     extend: {
       gridTemplateAreas: {
@@ -49,8 +56,9 @@ const config: Config = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        // "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        // "gradient-conic":
+        //   "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
   },
