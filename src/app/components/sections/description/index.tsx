@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { Card } from "app/components/ui-kit/card";
 import { Link } from "app/components/ui-kit/link";
+import { Avatar } from "app/components/ui-kit/avatar";
 
 export const DescriptionSection = () => {
   return (
@@ -30,6 +31,58 @@ export const DescriptionSection = () => {
             />{" "}
             method
           </>
+        }
+        topContent={
+          <div className={"flex "}>
+            <Avatar
+              iconName={"eth"}
+              altName={"ETH"}
+              description={"ETH"}
+              isHoverable
+            />
+            <Avatar
+              iconName={"eth"}
+              altName={"ETH"}
+              description={"ETH"}
+              isHoverable
+            />
+            <Avatar
+              iconName={"eth"}
+              altName={"ETH"}
+              description={"ETH"}
+              isHoverable
+            />
+            <Avatar
+              iconName={"eth"}
+              altName={"ETH"}
+              description={"ETH"}
+              isHoverable
+            />{" "}
+            <Avatar
+              iconName={"eth"}
+              altName={"ETH"}
+              description={"ETH"}
+              isHoverable
+            />
+            <Avatar
+              iconName={"eth"}
+              altName={"ETH"}
+              description={"ETH"}
+              isHoverable
+            />
+            <Avatar
+              iconName={"eth"}
+              altName={"ETH"}
+              description={"ETH"}
+              isHoverable
+            />
+            <Avatar
+              iconName={"eth"}
+              altName={"ETH"}
+              description={"ETH"}
+              isHoverable
+            />
+          </div>
         }
         className={classNames(
           "grid-in-currency",
