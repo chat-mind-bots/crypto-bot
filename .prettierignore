@@ -1,2 +1,5 @@
 .next/
 **/*.d.ts
+
+*.json
+*.config.ts

@@ -39,7 +39,7 @@ export default function UiKit() {
                 text={"GetInvoice"}
                 title={"Get invoice method"}
                 href={"https://google.com"}
-              />{" "}
+              />
               method
             </span>
           }
