@@ -25,16 +25,17 @@ export const Avatar: FC<IOwnProps> = ({
   const onLeave = () => {
     setIsHover(false);
   };
-  console.log(altName, iconName);
   return (
     <div
       onMouseLeave={onLeave}
       onMouseEnter={onEnter}
-      className={"text-center"}
+      className={classNames("text-center", "duration-200", {
+        "text-gray": !isHover,
+      })}
     >
       <div
         className={classNames("duration-200", {
-          "scale-125": isHoverable && isHover,
+          "scale-110": isHoverable && isHover,
         })}
       >
         <DynamicISvg

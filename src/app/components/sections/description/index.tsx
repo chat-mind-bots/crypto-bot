@@ -32,8 +32,8 @@ export const DescriptionSection = () => {
             method
           </>
         }
-        topContent={
-          <div className={"flex "}>
+        bottomContent={
+          <div className={classNames("flex", "justify-between")}>
             <Avatar
               iconName={"eth"}
               altName={"ETH"}
@@ -41,45 +41,45 @@ export const DescriptionSection = () => {
               isHoverable
             />
             <Avatar
-              iconName={"eth"}
-              altName={"ETH"}
-              description={"ETH"}
+              iconName={"usdt"}
+              altName={"USDT"}
+              description={"USDT"}
               isHoverable
             />
             <Avatar
-              iconName={"eth"}
-              altName={"ETH"}
-              description={"ETH"}
+              iconName={"ton"}
+              altName={"TON"}
+              description={"TON"}
               isHoverable
             />
             <Avatar
-              iconName={"eth"}
-              altName={"ETH"}
-              description={"ETH"}
+              iconName={"btc"}
+              altName={"BTC"}
+              description={"BTC"}
               isHoverable
             />{" "}
             <Avatar
-              iconName={"eth"}
-              altName={"ETH"}
-              description={"ETH"}
+              iconName={"trx"}
+              altName={"TRX"}
+              description={"TRX"}
               isHoverable
             />
             <Avatar
-              iconName={"eth"}
-              altName={"ETH"}
-              description={"ETH"}
+              iconName={"ltc"}
+              altName={"LTC"}
+              description={"LTC"}
               isHoverable
             />
             <Avatar
-              iconName={"eth"}
-              altName={"ETH"}
-              description={"ETH"}
+              iconName={"usdc"}
+              altName={"USDC"}
+              description={"USDC"}
               isHoverable
             />
             <Avatar
-              iconName={"eth"}
-              altName={"ETH"}
-              description={"ETH"}
+              iconName={"bnb"}
+              altName={"BNB"}
+              description={"BNB"}
               isHoverable
             />
           </div>
