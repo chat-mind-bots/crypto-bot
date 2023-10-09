@@ -31,7 +31,11 @@ export const DescriptionSection = () => {
             method
           </>
         }
-        className={"grid-in-currency"}
+        className={classNames(
+          "grid-in-currency",
+          "flex-col-reverse",
+          "md:flex-col",
+        )}
       />
       <Card
         title={"One click to start"}

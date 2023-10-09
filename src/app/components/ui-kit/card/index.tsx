@@ -22,6 +22,8 @@ export const Card: FC<IOwnProps> = ({
     <div
       className={classNames(
         "bg-bgLight",
+        "flex",
+        "flex-col",
         "dark:bg-bgDark",
         "rounded-[32px]",
         "md:px-[56px]",
