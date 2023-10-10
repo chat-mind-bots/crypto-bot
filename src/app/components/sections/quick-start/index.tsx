@@ -3,6 +3,9 @@ import { GradientCard } from "app/components/ui-kit/gradient-card";
 import { DoubleCard } from "app/components/ui-kit/double-card";
 import classNames from "classnames";
 import { Section } from "app/components/ui-kit/section";
+import { Step } from "app/components/ui-kit/step";
+import { BaseText } from "app/components/ui-kit/typography/base-text";
+import { Link } from "app/components/ui-kit/link";
 
 export const QuickStartSection = () => {
   return (
@@ -16,15 +19,120 @@ export const QuickStartSection = () => {
           }
         />
         <DoubleCard
-          firstContent={<div>Authorizing your app</div>}
+          firstContent={
+            <Step
+              title={"Authorizing your app"}
+              num={1}
+              mode={"decimal"}
+              list={[
+                <BaseText key={`list-text-Authorizing-your-app-1`}>
+                  Open{" "}
+                  <Link
+                    text={"@CryptoBot"}
+                    title={"Cryptobot open link"}
+                    href={"https://t.me/CryptoBot"}
+                  />
+                </BaseText>,
+                <BaseText key={`list-text-Authorizing-your-app-1`}>
+                  Go to{" "}
+                  <Link
+                    text={"Crypto Pay"}
+                    title={"Crypto Pay link"}
+                    href={"https://t.me/CryptoBot"}
+                  />
+                </BaseText>,
+                <BaseText key={`list-text-Authorizing-your-app-1`}>
+                  Tap{" "}
+                  <Link
+                    text={"Create App"}
+                    title={"Create App link"}
+                    href={"https://google.com"}
+                  />
+                </BaseText>,
+                <BaseText key={`list-text-Authorizing-your-app-1`}>
+                  Get{" "}
+                  <Link
+                    text={"API Token"}
+                    title={"API Token link"}
+                    href={"https://google.com"}
+                  />
+                </BaseText>,
+              ]}
+            />
+          }
           secondContent={<GradientCard type={"violet"} />}
         />
         <DoubleCard
-          firstContent={<GradientCard type={"orange"} />}
-          secondContent={<div>Crypto Pay API Request</div>}
+          firstContent={
+            <Step
+              title={"Crypto Pay API Request"}
+              description={[
+                "Requests are only served over HTTPS",
+                "To pass parameters use:",
+              ]}
+              num={2}
+              mode={"disc"}
+              list={[
+                <BaseText key={`list-text-Authorizing-your-app-1`}>
+                  <Link
+                    text={"getInvoices"}
+                    title={"getInvoices link"}
+                    href={"https://google.com/getInvoices"}
+                  />{" "}
+                  method to get a list of created invoices.
+                </BaseText>,
+                <BaseText key={`list-text-Authorizing-your-app-1`}>
+                  <Link
+                    text={"Webhooks"}
+                    title={"Webhooks link"}
+                    href={"https://google.com/Webhooks"}
+                  />{" "}
+                  to receive updates in realtime.
+                </BaseText>,
+              ]}
+            />
+          }
+          secondContent={<GradientCard type={"orange"} />}
+          className={"md:flex-row-reverse"}
+          isReverse={true}
         />
         <DoubleCard
-          firstContent={<div>Getting updates</div>}
+          firstContent={
+            <Step
+              title={"Getting updates"}
+              description={[
+                "There are two ways of receiving updates for your app:",
+              ]}
+              num={3}
+              mode={"disc"}
+              list={[
+                <Link
+                  text={"URL query string"}
+                  title={"URL query string link"}
+                  href={"https://google.com/URL_query_string"}
+                  key={"list-link-URL query string"}
+                />,
+                <Link
+                  text={"application/json"}
+                  title={"application/json link"}
+                  href={"https://google.com/application_json "}
+                  key={"list-link-application/json"}
+                />,
+                <Link
+                  text={"application/x-www-form-urlencoded"}
+                  title={"application/x-www-form-urlencoded link"}
+                  href={"https://google.com/application_x-www-form-urlencoded"}
+                  key={"list-link-application/x-www-form-urlencoded"}
+                />,
+                <Link
+                  text={"multipart/form-data"}
+                  title={"multipart/form-data link"}
+                  href={"https://google.com/multipart_form-data"}
+                  key={"list-link-multipart/form-data"}
+                />,
+              ]}
+            />
+          }
           secondContent={<GradientCard type={"blue"} />}
         />
       </section>

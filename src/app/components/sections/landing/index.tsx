@@ -1,5 +1,5 @@
-import { H1 } from "app/components/ui-kit/Typography/h1";
-import { BaseText } from "app/components/ui-kit/Typography/base-text";
+import { H1 } from "app/components/ui-kit/typography/h1";
+import { BaseText } from "app/components/ui-kit/typography/base-text";
 import { Button } from "app/components/ui-kit/button";
 import { DynamicPng } from "app/components/images/dynamic-png";
 import { Section } from "app/components/ui-kit/section";

@@ -2,7 +2,7 @@
 
 import { FC, useState } from "react";
 import { DynamicISvg } from "app/components/images/dynamic-svg";
-import { DescriptionText } from "app/components/ui-kit/Typography/description-text";
+import { DescriptionText } from "app/components/ui-kit/typography/description-text";
 import classNames from "classnames";
 
 interface IOwnProps {
