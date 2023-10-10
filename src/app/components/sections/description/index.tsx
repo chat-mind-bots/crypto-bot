@@ -1,9 +1,24 @@
 import classNames from "classnames";
 import { Card } from "app/components/ui-kit/card";
 import { Link } from "app/components/ui-kit/link";
-import { Avatar } from "app/components/ui-kit/avatar";
+import Exchange from "app/components/animations/exchange";
+import Avatar from "app/components/ui-kit/avatar";
 
 export const DescriptionSection = () => {
+  const coins: Array<{
+    iconName: string;
+    altName: string;
+    description: string;
+  }> = [
+    { iconName: "eth", altName: "ETH logo", description: "ETH" },
+    { iconName: "usdt", altName: "USDT logo", description: "USDT" },
+    { iconName: "ton", altName: "TON logo", description: "TON" },
+    { iconName: "btc", altName: "BTC logo", description: "BTC" },
+    { iconName: "trx", altName: "TRX logo", description: "TRX" },
+    { iconName: "ltc", altName: "LTC logo", description: "LTC" },
+    { iconName: "usdc", altName: "USDC logo", description: "USDC" },
+    { iconName: "bnb", altName: "BNB logo", description: "BNB" },
+  ];
   return (
     <section
       className={classNames(
@@ -33,55 +48,18 @@ export const DescriptionSection = () => {
           </>
         }
         bottomContent={
-          <div className={classNames("flex", "justify-between")}>
-            <Avatar
-              iconName={"eth"}
-              altName={"ETH"}
-              description={"ETH"}
-              isHoverable
-            />
-            <Avatar
-              iconName={"usdt"}
-              altName={"USDT"}
-              description={"USDT"}
-              isHoverable
-            />
-            <Avatar
-              iconName={"ton"}
-              altName={"TON"}
-              description={"TON"}
-              isHoverable
-            />
-            <Avatar
-              iconName={"btc"}
-              altName={"BTC"}
-              description={"BTC"}
-              isHoverable
-            />{" "}
-            <Avatar
-              iconName={"trx"}
-              altName={"TRX"}
-              description={"TRX"}
-              isHoverable
-            />
-            <Avatar
-              iconName={"ltc"}
-              altName={"LTC"}
-              description={"LTC"}
-              isHoverable
-            />
-            <Avatar
-              iconName={"usdc"}
-              altName={"USDC"}
-              description={"USDC"}
-              isHoverable
-            />
-            <Avatar
-              iconName={"bnb"}
-              altName={"BNB"}
-              description={"BNB"}
-              isHoverable
-            />
+          <div
+            className={classNames("flex", "justify-between", "sm:flex-wrap")}
+          >
+            {coins.map(({ iconName, altName, description }) => (
+              <Avatar
+                iconName={iconName}
+                description={description}
+                key={`description--${iconName}`}
+                altName={altName}
+                isHoverable
+              />
+            ))}
           </div>
         }
         className={classNames(
@@ -139,6 +117,7 @@ export const DescriptionSection = () => {
             API method
           </>
         }
+        bottomContent={<Exchange />}
         className={"grid-in-exchange"}
       />
       <Card

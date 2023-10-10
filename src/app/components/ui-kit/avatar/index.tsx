@@ -12,19 +12,23 @@ interface IOwnProps {
   isHoverable?: boolean;
 }
 
-export const Avatar: FC<IOwnProps> = ({
-  isHoverable,
-  iconName,
+// Add a displayName property to your component.
+const Avatar: FC<IOwnProps> = ({
   altName,
+  iconName,
+  isHoverable,
   description,
 }) => {
   const [isHover, setIsHover] = useState(false);
+
   const onEnter = () => {
     setIsHover(true);
   };
+
   const onLeave = () => {
     setIsHover(false);
   };
+
   return (
     <div
       onMouseLeave={onLeave}
@@ -46,7 +50,14 @@ export const Avatar: FC<IOwnProps> = ({
           sizes="(max-width: 768px) 100%"
         />
       </div>
-      {description && <DescriptionText>{description}</DescriptionText>}
+      <div className={classNames("hidden md:block")}>
+        {description && <DescriptionText>{description}</DescriptionText>}
+      </div>
     </div>
   );
 };
+
+// Set the displayName property for the component.
+Avatar.displayName = "Avatar";
+
+export default Avatar;
