@@ -9,11 +9,11 @@ export const GradientCard: FC<IOwnProps> = ({ type }) => {
   const background = useMemo(() => {
     switch (type) {
       case "blue":
-        return "bg-gradient-to-r from-bgLightBlue to-bgLightDarkBlue";
+        return "bg-[linear-gradient(0deg,_#C2E9FB_0%,_#A1C4FD_100%)]";
       case "orange":
-        return "bg-gradient-to-bl from-rose  to-pink";
+        return "bg-[linear-gradient(207deg,_#FCB69F_0%,_#FFECD2_100%)]";
       case "violet":
-        return "bg-gradient-to-tr from-bgBlue to-purple";
+        return "bg-[linear-gradient(297deg,_#8EC5FC_0%,_#E0C3FC_100%)]";
     }
   }, [type]);
   return (
