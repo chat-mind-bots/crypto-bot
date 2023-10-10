@@ -6,5 +6,7 @@ interface IOwnProps {
 }
 
 export const Tag: FC<IOwnProps> = ({ text }) => {
-  return <span className={classNames("text-[14px]", "text-gray")}>{text}</span>;
+  return (
+    <span className={classNames("text-[14px]", "text-gray-100")}>{text}</span>
+  );
 };
