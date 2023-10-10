@@ -1,6 +1,6 @@
 import { FC, ReactNode } from "react";
-import { H2 } from "app/components/ui-kit/Typography/h2";
-import { BaseText } from "app/components/ui-kit/Typography/base-text";
+import { H2 } from "app/components/ui-kit/typography/h2";
+import { BaseText } from "app/components/ui-kit/typography/base-text";
 import classNames from "classnames";
 
 export interface IOwnProps {

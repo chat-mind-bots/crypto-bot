@@ -4,22 +4,55 @@ import classNames from "classnames";
 interface IOwnProps {
   firstContent: ReactNode;
   secondContent: ReactNode;
+  className?: string;
+  isReverse?: boolean;
 }
-export const DoubleCard: FC<IOwnProps> = ({ firstContent, secondContent }) => {
+export const DoubleCard: FC<IOwnProps> = ({
+  firstContent,
+  secondContent,
+  className,
+  isReverse,
+}) => {
   return (
     <div
       className={classNames(
-        "grid",
+        "flex",
+        "flex-col-reverse",
+        "md:flex-row",
+        "md:justify-between",
         "w-full",
-        "md:grid-cols-doubleCard",
         "h-[565px]",
         "md:h-[488px]",
-        "grid-rows-doubleCardMobile",
-        "md:grid-rows-doubleCard",
+        "gap-[16px]",
+        "md:gap-0",
+        className,
       )}
     >
-      {firstContent}
-      {secondContent}
+      <div
+        className={classNames(
+          "md:w-[50%]",
+          "w-[100%]",
+          "md:h-[100%]",
+          "h-[50%]",
+          "flex",
+          "items-center",
+          {
+            "md:justify-end": isReverse,
+          },
+        )}
+      >
+        {firstContent}
+      </div>
+      <div
+        className={classNames(
+          "md:w-[50%]",
+          "w-[100%]",
+          "md:h-[100%]",
+          "h-[50%]",
+        )}
+      >
+        {secondContent}
+      </div>
     </div>
   );
 };

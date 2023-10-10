@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { FC, useMemo } from "react";
-import { ButtonText } from "app/components/ui-kit/Typography/button-text";
+import { ButtonText } from "app/components/ui-kit/typography/button-text";
 
 type ButtonVariant = "primary" | "secondary" | "outlined";
 interface IOwnProps {
