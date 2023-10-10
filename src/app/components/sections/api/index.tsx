@@ -37,7 +37,6 @@ export const Api = () => {
             alt={"crypto-api-desktop image"}
             width={712}
             height={550}
-            // sizes={"(max-width: 768px) 100%"}
             className={classNames("w-auto", "h-full")}
           />
         </div>
@@ -66,12 +65,24 @@ export const Api = () => {
             "p-[32px]",
           )}
         >
-          <H3>Crypto Pay API</H3>
-          <BaseText className={classNames("max-w-[408px]")}>
+          <H3 className={classNames("text-white", "dark:text-white")}>
+            Crypto Pay API
+          </H3>
+          <BaseText
+            className={classNames(
+              "max-w-[408px]",
+              "text-white",
+              "dark:text-white",
+            )}
+          >
             Explore available methods and types and integrate them in any
             programming language.
           </BaseText>
-          <Button variant={"outlined"} text={"Open API Docs"} />
+          <Button
+            variant={"outlined"}
+            text={"Open API Docs"}
+            href={"https://google.com/open_api_docks"}
+          />
         </div>
       </div>
     </Section>

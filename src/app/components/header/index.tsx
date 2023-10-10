@@ -54,7 +54,11 @@ export const Header = () => {
           <Navigation />
           <div className={classNames("flex", "gap-[8px]", "items-center")}>
             <ThemeSwitcher />
-            <Button variant={"secondary"} text={"Get started"} />
+            <Button
+              variant={"secondary"}
+              text={"Get started"}
+              href={"https://google.com/get_started"}
+            />
           </div>
         </div>
       </div>

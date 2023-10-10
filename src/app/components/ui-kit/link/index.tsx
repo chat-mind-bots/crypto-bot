@@ -1,5 +1,6 @@
 import { FC } from "react";
 import classNames from "classnames";
+import NextLink from "next/link";
 
 interface IOwnProps {
   text: string;
@@ -9,7 +10,8 @@ interface IOwnProps {
 
 export const Link: FC<IOwnProps> = ({ text, href, title }) => {
   return (
-    <a
+    <NextLink
+      target={"_blank"}
       title={title}
       href={href}
       className={classNames(
@@ -21,6 +23,6 @@ export const Link: FC<IOwnProps> = ({ text, href, title }) => {
       )}
     >
       {text}
-    </a>
+    </NextLink>
   );
 };

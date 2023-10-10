@@ -25,7 +25,7 @@ export const Avatar: FC<IOwnProps> = ({
   const onLeave = () => {
     setIsHover(false);
   };
-  console.log(altName, iconName);
+
   return (
     <div
       onMouseLeave={onLeave}
