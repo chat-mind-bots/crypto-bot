@@ -18,7 +18,12 @@ const config: Config = {
       deepBlue: "#297EE2",
       bgLightBlue: "#C2E9FB",
       bgLightDarkBlue: "#A1C4FD",
-      gray: "#A3A7AE",
+      gray: {
+        100: "#A3A7AE",
+        700: "#374151",
+        800: "#010417",
+        900: "#2B333F",
+      },
       dark: "#0D0D12",
       bgLight: "#F7F9FB",
       bgDark: "#18181D",
@@ -54,11 +59,15 @@ const config: Config = {
         doubleCard: "1fr",
         doubleCardMobile: "50% 50%",
       },
+      gradientColorStops: {
+        "violet-gradient": {
+          "0%": "#8EC5FC",
+          "100%": "#E0C3FC",
+        },
+      },
+      gradientColorStopPositions: {},
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        // "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        // "gradient-conic":
-        //   "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
   },

@@ -8,7 +8,7 @@ import { H3 } from "app/components/ui-kit/Typography/h3";
 import { H4 } from "app/components/ui-kit/Typography/h4";
 import { BaseText } from "app/components/ui-kit/Typography/base-text";
 import { DescriptionText } from "app/components/ui-kit/Typography/description-text";
-import { Layout } from "app/components/ui-kit/layout";
+import { Layout } from "app/components/layout";
 import { ButtonText } from "app/components/ui-kit/Typography/button-text";
 import { Card } from "app/components/ui-kit/card";
 

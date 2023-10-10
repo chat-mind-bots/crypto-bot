@@ -1,7 +1,6 @@
-"use client";
 import { FC } from "react";
 import Image, { ImageProps } from "next/image";
-import { useTheme } from "next-themes";
+import classNames from "classnames";
 
 export interface IDynamicImageProps {
   name: string;
@@ -17,7 +16,6 @@ export interface IDynamicImageProps {
 }
 export const DynamicImage: FC<IDynamicImageProps> = ({
   name,
-  isLazy,
   alt,
   width,
   height,
@@ -27,34 +25,40 @@ export const DynamicImage: FC<IDynamicImageProps> = ({
   ext,
   priority,
 }) => {
-  const { resolvedTheme } = useTheme();
-
-  const getImageSrc = () => {
-    return `/${name}/${
-      // resolvedTheme !== undefined ? resolvedTheme : "dark"
-      resolvedTheme !== undefined ? resolvedTheme : "light"
-    }/${name}.${ext}`;
+  const getImageSrc = (theme: string) => {
+    return `/${name}/${theme}/${name}.${ext}`;
   };
 
   const additionalProps: Partial<ImageProps> = {
-    ...(isLazy ? { loading: "lazy" } : { priority: true }),
     ...(blurDataURLLight
       ? { blurDataURL: blurDataURLLight, placeholder: "blur" }
       : {}),
     ...(blurDataURLDark
       ? { blurDataURL: blurDataURLDark, placeholder: "blur" }
       : {}),
-    ...(priority ? { priority: true } : {}),
+    ...(priority ? { priority: true } : { loading: "lazy" }),
   };
 
   return (
-    <Image
-      src={getImageSrc()}
-      alt={alt}
-      {...additionalProps}
-      width={width}
-      height={height}
-      sizes={sizes}
-    />
+    <>
+      <Image
+        src={getImageSrc("dark")}
+        alt={alt}
+        {...additionalProps}
+        width={width}
+        height={height}
+        sizes={sizes}
+        className={classNames("hidden", "dark:block")}
+      />
+      <Image
+        src={getImageSrc("light")}
+        alt={alt}
+        {...additionalProps}
+        width={width}
+        height={height}
+        sizes={sizes}
+        className={classNames("dark:hidden")}
+      />
+    </>
   );
 };
