@@ -4,7 +4,6 @@ import { Link } from "app/components/ui-kit/link";
 import Exchange from "app/components/animations/exchange";
 import Avatar from "app/components/ui-kit/avatar";
 import { Section } from "app/components/ui-kit/section";
-import { Avatar } from "app/components/ui-kit/avatar";
 
 export const DescriptionSection = () => {
   const coins: Array<{

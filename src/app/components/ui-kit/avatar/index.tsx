@@ -56,8 +56,4 @@ const Avatar: FC<IOwnProps> = ({
     </div>
   );
 };
-
-// Set the displayName property for the component.
-Avatar.displayName = "Avatar";
-
 export default Avatar;
