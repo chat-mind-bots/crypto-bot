@@ -1,11 +1,13 @@
 import classNames from "classnames";
 import { FC, useMemo } from "react";
 import { ButtonText } from "app/components/ui-kit/typography/button-text";
+import Link from "next/link";
 
 type ButtonVariant = "primary" | "secondary" | "outlined";
 interface IOwnProps {
   variant: ButtonVariant;
   text: string;
+  href: string;
 }
 
 const getClassNamesByVariant = (variant: ButtonVariant): string[] => {
@@ -24,7 +26,7 @@ const getClassNamesByVariant = (variant: ButtonVariant): string[] => {
       ];
   }
 };
-export const Button: FC<IOwnProps> = ({ variant, text }) => {
+export const Button: FC<IOwnProps> = ({ variant, text, href }) => {
   const memoizedClassNames = useMemo(
     () => [
       "md:w-[193px]",
@@ -33,13 +35,21 @@ export const Button: FC<IOwnProps> = ({ variant, text }) => {
       "w-[163px]",
       "h-[46px]",
       ...getClassNamesByVariant(variant),
+      "flex",
+      "items-center",
+      "justify-center",
     ],
     [variant],
   );
 
   return (
-    <button className={classNames(memoizedClassNames)}>
+    <Link
+      className={classNames(memoizedClassNames)}
+      href={href}
+      title={text}
+      target={"_blank"}
+    >
       <ButtonText>{text}</ButtonText>
-    </button>
+    </Link>
   );
 };

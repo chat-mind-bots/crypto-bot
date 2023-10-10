@@ -5,15 +5,22 @@ import classNames from "classnames";
 
 export interface IOwnProps {
   title: ReactNode | string;
-  description?: string;
+  description?: string | ReactNode;
 }
 export const PageHeader: FC<IOwnProps> = ({ title, description }) => {
   return (
-    <div className={classNames("flex", "flex-col", "gap-[24px]")}>
+    <div
+      className={classNames("flex", "flex-col", "gap-[24px]", "items-center")}
+    >
       <H2>{title}</H2>
-      {description && (
-        <BaseText className={"md:max-w-[590px]"}>{description}</BaseText>
-      )}
+      {description &&
+        (typeof description === "string" ? (
+          <BaseText className={classNames("md:max-w-[590px]", "text-center")}>
+            {description}
+          </BaseText>
+        ) : (
+          description
+        ))}
     </div>
   );
 };
