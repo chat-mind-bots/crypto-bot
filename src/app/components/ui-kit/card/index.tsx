@@ -1,7 +1,7 @@
 import { FC, ReactNode } from "react";
-import { BaseText } from "app/components/ui-kit/Typography/base-text";
+import { BaseText } from "app/components/ui-kit/typography/base-text";
 import classNames from "classnames";
-import { H3 } from "app/components/ui-kit/Typography/h3";
+import { H3 } from "app/components/ui-kit/typography/h3";
 
 interface IOwnProps {
   title: string;

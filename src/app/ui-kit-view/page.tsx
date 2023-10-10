@@ -2,14 +2,14 @@ import classNames from "classnames";
 import { Button } from "app/components/ui-kit/button";
 import { Link } from "app/components/ui-kit/link";
 import { Tag } from "app/components/ui-kit/tag";
-import { H1 } from "app/components/ui-kit/Typography/h1";
-import { H2 } from "app/components/ui-kit/Typography/h2";
-import { H3 } from "app/components/ui-kit/Typography/h3";
-import { H4 } from "app/components/ui-kit/Typography/h4";
-import { BaseText } from "app/components/ui-kit/Typography/base-text";
-import { DescriptionText } from "app/components/ui-kit/Typography/description-text";
+import { H1 } from "app/components/ui-kit/typography/h1";
+import { H2 } from "app/components/ui-kit/typography/h2";
+import { H3 } from "app/components/ui-kit/typography/h3";
+import { H4 } from "app/components/ui-kit/typography/h4";
+import { BaseText } from "app/components/ui-kit/typography/base-text";
+import { DescriptionText } from "app/components/ui-kit/typography/description-text";
 import { Layout } from "app/components/layout";
-import { ButtonText } from "app/components/ui-kit/Typography/button-text";
+import { ButtonText } from "app/components/ui-kit/typography/button-text";
 import { Card } from "app/components/ui-kit/card";
 
 export default function UiKit() {
