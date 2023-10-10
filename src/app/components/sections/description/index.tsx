@@ -34,7 +34,6 @@ export const DescriptionSection = () => {
               method
             </>
           }
-          className={"grid-in-currency"}
           topContent={
             <div className={"flex "}>
               <Avatar
