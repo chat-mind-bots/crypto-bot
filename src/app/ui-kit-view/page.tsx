@@ -18,9 +18,21 @@ export default function UiKit() {
       <div
         className={classNames("flex", "flex-col", "min-h-screen", "gap-2.5")}
       >
-        <Button variant={"primary"} text={"Get started 1"} />
-        <Button variant={"secondary"} text={"Get started"} />
-        <Button variant={"outlined"} text={"Get started"} />
+        <Button
+          variant={"primary"}
+          text={"Get started 1"}
+          href={"https://google.com/1"}
+        />
+        <Button
+          variant={"secondary"}
+          text={"Get started"}
+          href={"https://google.com/2"}
+        />
+        <Button
+          variant={"outlined"}
+          text={"Get started"}
+          href={"https://google.com/3"}
+        />
         <Tag text={"ETH"} />
         <Link text={"Link"} href={"https://google.com"} title={"Google link"} />
         <H1>H1 header</H1>
