@@ -10,6 +10,7 @@ export interface IDynamicImageProps {
   sizes?: string;
   blurDataURLDark?: string;
   blurDataURLLight?: string;
+  className?: string;
   width: number;
   height: number;
   ext: string;
@@ -24,6 +25,7 @@ export const DynamicImage: FC<IDynamicImageProps> = ({
   blurDataURLLight,
   ext,
   priority,
+  className,
 }) => {
   const getImageSrc = (theme: string) => {
     return `/${name}/${theme}/${name}.${ext}`;
@@ -48,7 +50,7 @@ export const DynamicImage: FC<IDynamicImageProps> = ({
         width={width}
         height={height}
         sizes={sizes}
-        className={classNames("hidden", "dark:block")}
+        className={classNames("hidden", "dark:block", className)}
       />
       <Image
         src={getImageSrc("light")}
@@ -57,7 +59,7 @@ export const DynamicImage: FC<IDynamicImageProps> = ({
         width={width}
         height={height}
         sizes={sizes}
-        className={classNames("dark:hidden")}
+        className={classNames("dark:hidden", className)}
       />
     </>
   );
