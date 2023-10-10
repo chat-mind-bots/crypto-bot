@@ -10,6 +10,7 @@ interface IOwnProps {
   altName: string;
   description?: string;
   isHoverable?: boolean;
+  className?: string;
 }
 
 // Add a displayName property to your component.
@@ -18,6 +19,7 @@ const Avatar: FC<IOwnProps> = ({
   iconName,
   isHoverable,
   description,
+  className,
 }) => {
   const [isHover, setIsHover] = useState(false);
 
@@ -33,7 +35,7 @@ const Avatar: FC<IOwnProps> = ({
     <div
       onMouseLeave={onLeave}
       onMouseEnter={onEnter}
-      className={classNames("text-center", "duration-200", {
+      className={classNames("text-center", "duration-200", className, {
         "text-gray": !isHover,
       })}
     >
