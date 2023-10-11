@@ -13,16 +13,12 @@ interface IShufflerProps {
   className: string;
 }
 
-export const Shuffler: FC<IShufflerProps> = ({
-  direction,
-  children,
-  className,
-}) => {
+export const Shuffler: FC<IShufflerProps> = ({ children, className }) => {
   const [boundingBox, setBoundingBox] = useState<Record<string, DOMRect>>({});
   const [prevBoundingBox, setPrevBoundingBox] = useState<
     Record<string, DOMRect>
   >({});
-  console.log(direction);
+
   const prevChildren = usePrevious(children);
 
   useLayoutEffect(() => {

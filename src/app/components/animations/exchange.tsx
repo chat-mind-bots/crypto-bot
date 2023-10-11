@@ -1,5 +1,5 @@
 "use client";
-import React, { createRef, useState } from "react";
+import React, { createRef, useEffect, useState } from "react";
 import { Shuffler } from "app/components/ui-kit/shuffler";
 import { ShuffleDirectionEnum } from "constants/shuffle-direction.enum";
 import shuffleArray from "app/helpers/shuffle-array.helper";
@@ -34,6 +34,14 @@ const Exchange = () => {
   const onShuffle = () => {
     setElems(shuffleArray(elems));
   };
+
+  useEffect(() => {
+    const interval = setInterval(onShuffle, 2500);
+    return () => {
+      clearInterval(interval); // Clear the interval on unmount
+    };
+  }, [elems]);
+
   return (
     <div className={classNames("flex items-center relative")}>
       <Shuffler
