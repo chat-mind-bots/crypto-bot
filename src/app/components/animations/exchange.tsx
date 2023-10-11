@@ -46,7 +46,15 @@ const Exchange = () => {
     <div className={classNames("flex items-center relative")}>
       <Shuffler
         direction={ShuffleDirectionEnum.HORIZONTAL}
-        className={classNames("flex", "relative", "w-[160px]", "h-[100%]")}
+        className={classNames(
+          "flex",
+          "relative",
+          "w-[120px]",
+          "sm:w-[130px]",
+          "md:w-[140px]",
+          "lg:w-[160px]",
+          "h-[100%]",
+        )}
       >
         {elements.map((item, index) => (
           <div
