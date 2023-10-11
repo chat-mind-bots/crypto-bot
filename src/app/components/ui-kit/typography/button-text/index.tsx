@@ -3,9 +3,10 @@ import classNames from "classnames";
 
 interface IOwnProps {
   children: ReactNode;
+  className?: string;
 }
 
-export const ButtonText: FC<IOwnProps> = ({ children }) => {
+export const ButtonText: FC<IOwnProps> = ({ children, className }) => {
   return (
     <span
       className={classNames(
@@ -14,6 +15,7 @@ export const ButtonText: FC<IOwnProps> = ({ children }) => {
         "font-medium",
         "md:leading-[24px]",
         "leading-[22px]",
+        className,
       )}
     >
       {children}
