@@ -16,6 +16,7 @@ const config: Config = {
       blue: "#41A4DF",
       bgBlue: "#8EC5FC",
       deepBlue: "#297EE2",
+      darkBlue: "#232328",
       bgLightBlue: "#C2E9FB",
       bgLightDarkBlue: "#A1C4FD",
       gray: {
