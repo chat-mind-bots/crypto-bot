@@ -40,9 +40,16 @@ const Avatar: FC<IOwnProps> = ({
       })}
     >
       <div
-        className={classNames("duration-200", {
-          "scale-110": isHoverable && isHover,
-        })}
+        className={classNames(
+          "duration-200",
+          {
+            "scale-110": isHoverable && isHover,
+          },
+          "w-[56px]",
+          "xl:w-[96px]",
+          "lg:w-[80px]",
+          "md:w-[64px]",
+        )}
       >
         <DynamicISvg
           alt={altName}

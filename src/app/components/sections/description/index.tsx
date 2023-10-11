@@ -51,7 +51,14 @@ export const DescriptionSection = () => {
           }
           bottomContent={
             <div
-              className={classNames("flex", "justify-between", "sm:flex-wrap")}
+              className={classNames(
+                "flex",
+                "flex-wrap",
+                "justify-start",
+                "gap-2",
+                "lg:gap-7",
+                "xl:justify-between",
+              )}
             >
               {coins.map(({ iconName, altName, description }) => (
                 <Avatar
@@ -120,8 +127,8 @@ export const DescriptionSection = () => {
               API method
             </>
           }
-          bottomContent={<Exchange />}
-          className={"grid-in-exchange"}
+          topContent={<Exchange />}
+          className={classNames("grid-in-exchange", "items-center")}
         />
         <Card
           title={"Send coins to users"}
