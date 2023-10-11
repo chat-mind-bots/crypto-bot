@@ -3,9 +3,10 @@ import classNames from "classnames";
 
 interface IOwnProps {
   children: ReactNode;
+  className?: string;
 }
 
-export const H2: FC<IOwnProps> = ({ children }) => {
+export const H2: FC<IOwnProps> = ({ children, className }) => {
   return (
     <h2
       className={classNames(
@@ -14,6 +15,7 @@ export const H2: FC<IOwnProps> = ({ children }) => {
         "font-[629]",
         "md:leading-[61px]",
         "leading-[35px]",
+        className,
       )}
     >
       {children}

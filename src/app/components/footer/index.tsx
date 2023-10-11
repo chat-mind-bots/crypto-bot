@@ -14,6 +14,7 @@ export const Footer = () => {
         "pb-[32px]",
         "relative",
         "bg-darkBlue",
+        "dark:bg-bgDark",
         "grid",
         "place-items-center",
       )}

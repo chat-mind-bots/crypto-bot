@@ -10,7 +10,7 @@ import { Link } from "app/components/ui-kit/link";
 export const QuickStartSection = () => {
   return (
     <Section className={classNames("bg-bgLight", "dark:bg-bgDark")}>
-      <section className={classNames("grid", "gap-[24px]", "md:gap-[40px]")}>
+      <div className={classNames("grid", "gap-[24px]", "md:gap-[40px]")}>
         <PageHeader
           title={
             <>
@@ -135,7 +135,7 @@ export const QuickStartSection = () => {
           }
           secondContent={<GradientCard type={"blue"} />}
         />
-      </section>
+      </div>
     </Section>
   );
 };
