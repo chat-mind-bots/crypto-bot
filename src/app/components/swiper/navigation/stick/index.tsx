@@ -9,7 +9,8 @@ interface IOwnProps {
 
 export const Stick: FC<IOwnProps> = ({ activeIndex, onClick, index }) => {
   return (
-    <button
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
+    <span
       className={classNames(
         "w-[82px]",
         "h-[4px]",
@@ -22,6 +23,6 @@ export const Stick: FC<IOwnProps> = ({ activeIndex, onClick, index }) => {
         },
       )}
       onClick={onClick}
-    ></button>
+    ></span>
   );
 };
