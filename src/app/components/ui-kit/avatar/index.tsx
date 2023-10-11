@@ -36,7 +36,7 @@ const Avatar: FC<IOwnProps> = ({
       onMouseLeave={onLeave}
       onMouseEnter={onEnter}
       className={classNames("text-center", "duration-200", className, {
-        "text-gray": !isHover,
+        "text-gray-100": !isHover,
       })}
     >
       <div

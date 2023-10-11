@@ -38,7 +38,7 @@ const Exchange = () => {
     <div className={classNames("flex items-center relative")}>
       <Shuffler
         direction={ShuffleDirectionEnum.HORIZONTAL}
-        className={classNames("flex", "relative", "w-[150px]", "h-[100%]")}
+        className={classNames("flex", "relative", "w-[160px]", "h-[100%]")}
       >
         {elements.map((item, index) => (
           <div
@@ -46,41 +46,54 @@ const Exchange = () => {
             key={`exchange--${item.id}`}
             ref={createRef()}
             className={classNames("absolute", "ton")}
-            style={{ left: `${index * 20}px` }}
+            style={{ left: `${index * 25}px` }}
           >
-            <div className={"flex items-center"}>
+            <div
+              className={"flex items-center rounded-[900px] stroke-bgLight"}
+              style={{
+                filter:
+                  "drop-shadow(0px 0px 8px rgba(182, 186, 191, 0.04)) drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.02))",
+                outline: "4px solid white",
+              }}
+            >
               <Avatar
                 iconName={item.iconName}
                 altName={item.altName}
                 className={classNames(
                   index !== elements.length - 1 ? "opacity-10" : "",
+                  "stroke-bgDark",
+                  "border-1",
+                  "rounded-[900px]",
+                  "ring-1",
                 )}
               />
             </div>
           </div>
         ))}
       </Shuffler>
-      <button
-        className={classNames(
-          "border-solid border-[#191919] bg-[rgba(17,_17,_17,_0.4)] flex flex-col w-10 h-6 items-center py-1 border rounded-[19px] absolute left-[120px]",
-        )}
-        onClick={onShuffle}
-      >
-        <DynamicISvg
-          name={"exchange-arrow"}
-          alt={"arrow"}
-          width={13}
-          height={6}
-        />
-        <DynamicISvg
-          name={"exchange-arrow"}
-          alt={"arrow"}
-          className={"rotate-180"}
-          width={13}
-          height={6}
-        />
-      </button>
-      <Avatar iconName={"dollar"} altName={"Dollar logo"} />
+      <div className={"flex items-center relative"}>
+        <button
+          className={classNames(
+            "border-solid border-[#191919] bg-[rgba(17,_17,_17,_0.4)] flex flex-col w-10 h-6 items-center py-1 border rounded-[19px] absolute -left-[25px]",
+          )}
+          onClick={onShuffle}
+        >
+          <DynamicISvg
+            name={"exchange-arrow"}
+            alt={"arrow"}
+            className={"rotate-180"}
+            width={13}
+            height={6}
+          />
+          <DynamicISvg
+            name={"exchange-arrow"}
+            alt={"arrow"}
+            width={13}
+            height={6}
+          />
+        </button>
+        <Avatar iconName={"dollar"} altName={"Dollar logo"} />
+      </div>
     </div>
   );
 };

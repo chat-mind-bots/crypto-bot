@@ -59,6 +59,7 @@ export const DescriptionSection = () => {
                   description={description}
                   key={`description--${iconName}`}
                   altName={altName}
+                  className={classNames("flex", "flex-col", "gap-2")}
                   isHoverable
                 />
               ))}
