@@ -94,11 +94,6 @@ const Exchange = () => {
                   "rounded-[900px]",
                   "z-10",
                   "relative",
-                  "transition-opacity",
-                  "ease-in-out",
-                  "transform",
-                  "duration-1000",
-                  "transition-all",
                   index !== elements.length - 1 ? "opacity-0" : "opacity-100",
                 )}
               />
