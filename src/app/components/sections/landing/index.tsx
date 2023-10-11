@@ -53,14 +53,7 @@ export const LandingSection = () => {
           </div>
         </div>
 
-        <div
-          className={classNames(
-            "md:w-[488px]",
-            "w-full",
-            "md:h-full",
-            "h-[640px]",
-          )}
-        >
+        <div className={classNames("md:w-[488px]", "md:h-full", "h-[640px]")}>
           <DynamicPng
             name={"phone-mock"}
             width={336}

@@ -19,7 +19,8 @@
     "next": "latest",
     "next-themes": "^0.2.1",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "swiper": "^10.3.1"
   },
   "devDependencies": {
     "@savvywombat/tailwindcss-grid-areas": "^3.1.0",

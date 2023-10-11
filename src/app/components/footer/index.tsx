@@ -1,29 +1,33 @@
-import { DynamicISvg } from "app/components/images/dynamic-svg";
 import classNames from "classnames";
+import { DynamicISvg } from "app/components/images/dynamic-svg";
 import { Navigation } from "app/components/navigation";
-import { ThemeSwitcher } from "app/components/theme-switcher";
 import { Button } from "app/components/ui-kit/button";
+import { ButtonText } from "app/components/ui-kit/typography/button-text";
 
-export const Header = () => {
+export const Footer = () => {
   return (
-    <header
+    <footer
       className={classNames(
-        "h-[110px]",
-        "md:h-[144px]",
-        "fixed",
-        "pt-[44px]",
-        "md:pt-[40px]",
-        "top-0",
-        "bg-white",
-        "dark:bg-dark",
-        "w-full",
+        "md:pt-[120px]",
+        "md:pb-[40px]",
+        "pt-[56px]",
+        "pb-[32px]",
+        "relative",
+        "bg-darkBlue",
+        "dark:bg-bgDark",
         "grid",
         "place-items-center",
-        "z-50",
-        "md:pb-[40px]",
       )}
     >
-      <div className={classNames("max-w-[1240px]", "w-full")}>
+      <div
+        className={classNames(
+          "flex",
+          "flex-col",
+          "gap-[24px]",
+          "max-w-[1240px]",
+          "w-full",
+        )}
+      >
         <div
           className={classNames(
             "flex",
@@ -53,17 +57,23 @@ export const Header = () => {
               sizes={"(max-width: 768px) 100%"}
             />
           </div>
-          <Navigation />
+          <Navigation
+            textClassName={classNames("text-white", "dark:text-white")}
+          />
           <div className={classNames("flex", "gap-[8px]", "items-center")}>
-            <ThemeSwitcher />
             <Button
-              variant={"secondary"}
+              variant={"outlined"}
               text={"Get started"}
               href={"https://google.com/get_started"}
             />
           </div>
         </div>
+        <ButtonText
+          className={classNames("px-[20px]", "text-white", "dark:text-white")}
+        >
+          ©2023 Crypto Bot
+        </ButtonText>
       </div>
-    </header>
+    </footer>
   );
 };

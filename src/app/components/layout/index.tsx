@@ -1,6 +1,7 @@
 import { FC, ReactNode } from "react";
 import classNames from "classnames";
 import { Header } from "app/components/header";
+import { Footer } from "app/components/footer";
 
 interface IOwnProps {
   children: ReactNode;
@@ -12,8 +13,8 @@ export const Layout: FC<IOwnProps> = ({ children }) => {
       <main
         className={classNames(
           "w-full",
-          "mt-[166px]",
-          "md:mt-[104px]",
+          "mt-[150px]",
+          "md:mt-[144px]",
           "grid",
           "place-items-center",
           "md:gap-[120px]",
@@ -22,6 +23,7 @@ export const Layout: FC<IOwnProps> = ({ children }) => {
       >
         {children}
       </main>
+      <Footer />
     </>
   );
 };
