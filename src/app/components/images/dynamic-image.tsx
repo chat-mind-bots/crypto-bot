@@ -49,7 +49,7 @@ export const DynamicImage: FC<IDynamicImageProps> = ({
         {...additionalProps}
         width={width}
         height={height}
-        sizes={sizes}
+        sizes={sizes && "(max-width: 768px) 100%"}
         className={classNames("hidden", "dark:block", className)}
       />
       <Image

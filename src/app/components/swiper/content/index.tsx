@@ -5,6 +5,19 @@ import {
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { useSwiper } from "swiper/react";
+import { DynamicImage } from "app/components/images/dynamic-image";
+
+const slides = [
+  {
+    imageName: "instant-sales",
+  },
+  {
+    imageName: "channel-integration",
+  },
+  {
+    imageName: "endless-customization",
+  },
+];
 
 const getGradientTypeByIndex = (num: number): GradientCardType => {
   switch (num) {
@@ -42,9 +55,16 @@ export const Content = () => {
     >
       <GradientCard
         type={getGradientTypeByIndex(activeIndex)}
-        // className={classNames("h-[50%]", "h-full")}
+        className={classNames("flex", "items-center", "justify-center")}
       >
-        card
+        <DynamicImage
+          name={slides[activeIndex].imageName}
+          ext={"png"}
+          className={classNames("absolute")}
+          alt={"Telegram message"}
+          width={400}
+          height={400}
+        />
       </GradientCard>
     </div>
   );

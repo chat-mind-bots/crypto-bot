@@ -6,6 +6,7 @@ import Avatar from "app/components/ui-kit/avatar";
 import { Section } from "app/components/ui-kit/section";
 import PaymentStatistic from "app/components/animations/payment-statistic";
 import SendCoin from "app/components/animations/send-coin";
+import { DynamicImage } from "app/components/images/dynamic-image";
 
 export const DescriptionSection = () => {
   const coins: Array<{
@@ -98,6 +99,15 @@ export const DescriptionSection = () => {
               , go to Crypto Pay and tap Create App to get API Token
             </>
           }
+          topContent={
+            <DynamicImage
+              height={62}
+              width={223}
+              alt={"Create Application"}
+              ext={"png"}
+              name={"create-app"}
+            />
+          }
           className={"grid-in-click"}
         />
         <Card
@@ -156,6 +166,15 @@ export const DescriptionSection = () => {
         />
         <Card
           title={"Anonymous payments"}
+          topContent={
+            <DynamicImage
+              height={200}
+              width={400}
+              ext={"png"}
+              alt={"app message"}
+              name={"image-commission"}
+            />
+          }
           description={
             <>
               Use allow_anonymous parameter in{" "}
