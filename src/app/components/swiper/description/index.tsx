@@ -17,7 +17,7 @@ export const Description: FC<ISliderDescriptionProps> = ({
     <div
       className={classNames(
         "flex",
-        "md:flex-row",
+        "lg:flex-row",
         "flex-col",
         "justify-end",
         "w-full",
@@ -29,23 +29,23 @@ export const Description: FC<ISliderDescriptionProps> = ({
         className={classNames(
           "flex",
           "flex-col",
-          "md:gap-[32px]",
+          "lg:gap-[32px]",
           "gap-[54px]",
-          "md:w-[50%]",
+          "lg:w-[50%]",
           "w-full",
           "pb-[81px]",
-          "md:pb-0",
+          "lg:pb-0",
           "items-center",
-          "md:items-start",
+          "lg:items-start",
         )}
       >
         <div
           className={classNames(
             "flex",
             "flex-col",
-            "md:gap-[32px]",
+            "lg:gap-[32px]",
             "gap-[24px]",
-            "md:max-w-[488px]",
+            "lg:max-w-[488px]",
             "w-full",
           )}
         >
@@ -54,7 +54,7 @@ export const Description: FC<ISliderDescriptionProps> = ({
               "text-white",
               "dark:text-white",
               "text-center",
-              "md:text-left",
+              "lg:text-left",
             )}
           >
             {title}
@@ -64,7 +64,7 @@ export const Description: FC<ISliderDescriptionProps> = ({
               "text-white",
               "dark:text-white",
               "text-center",
-              "md:text-left",
+              "lg:text-left",
             )}
           >
             {description}

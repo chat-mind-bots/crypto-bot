@@ -3,9 +3,10 @@ import classNames from "classnames";
 
 interface IOwnProps {
   children: ReactNode;
+  className?: string;
 }
 
-export const DescriptionText: FC<IOwnProps> = ({ children }) => {
+export const DescriptionText: FC<IOwnProps> = ({ children, className }) => {
   return (
     <span
       className={classNames(
@@ -14,6 +15,7 @@ export const DescriptionText: FC<IOwnProps> = ({ children }) => {
         "font-medium",
         "md:leading-[17px]",
         "leading-[15px]",
+        className,
       )}
     >
       {children}

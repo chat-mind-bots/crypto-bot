@@ -14,7 +14,7 @@ export const Stick: FC<IOwnProps> = ({ activeIndex, onClick, index }) => {
       className={classNames(
         "flex-1",
         "h-[4px]",
-        "md:w-[4px]",
+        "lg:w-[4px]",
         "bg-[rgba(255,_255,_255,_0.24)]",
         "rounded-[90px]",
         "cursor-pointer",

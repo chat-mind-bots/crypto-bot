@@ -35,8 +35,8 @@ export const Content = () => {
         "top-0",
         "left-0",
         "w-full",
-        "md:w-[488px]",
-        "md:h-full",
+        "lg:w-[488px]",
+        "lg:h-full",
         "h-[50%]",
       )}
     >
