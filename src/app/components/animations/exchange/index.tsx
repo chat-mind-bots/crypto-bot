@@ -44,7 +44,7 @@ const Exchange = () => {
   useEffect(() => {
     const interval = setInterval(onShuffle, 2500);
     return () => {
-      clearInterval(interval); // Clear the interval on unmount
+      clearInterval(interval);
     };
   }, [elems]);
 
