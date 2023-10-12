@@ -9,6 +9,7 @@ interface IOwnProps {
   iconName: string;
   altName: string;
   description?: string;
+  hideMobileDescription?: boolean;
   isHoverable?: boolean;
   className?: string;
 }
@@ -19,6 +20,7 @@ const Avatar: FC<IOwnProps> = ({
   iconName,
   isHoverable,
   description,
+  hideMobileDescription,
   className,
 }) => {
   const [isHover, setIsHover] = useState(false);
@@ -57,7 +59,12 @@ const Avatar: FC<IOwnProps> = ({
           sizes="(max-width: 768px) 100%"
         />
       </div>
-      <div className={classNames("hidden md:block")}>
+      <div
+        className={classNames(
+          hideMobileDescription ? "hidden" : "",
+          " md:block",
+        )}
+      >
         {description && <DescriptionText>{description}</DescriptionText>}
       </div>
     </div>
