@@ -6,8 +6,15 @@ import { Section } from "app/components/ui-kit/section";
 import { Step } from "app/components/ui-kit/step";
 import { BaseText } from "app/components/ui-kit/typography/base-text";
 import { Link } from "app/components/ui-kit/link";
+import { DynamicImage } from "app/components/images/dynamic-image";
 
 export const QuickStartSection = () => {
+  const styles = [
+    "content-center",
+    "items-center",
+    "align-middle",
+    "justify-center",
+  ];
   return (
     <Section
       className={classNames("bg-bgLight", "dark:bg-bgDark")}
@@ -63,7 +70,20 @@ export const QuickStartSection = () => {
               ]}
             />
           }
-          secondContent={<GradientCard type={"violet"}>Content</GradientCard>}
+          secondContent={
+            <GradientCard
+              type={"violet"}
+              className={classNames("flex", ...styles)}
+            >
+              <DynamicImage
+                width={392}
+                height={253}
+                name={"authorizing"}
+                alt={"Telegram message"}
+                ext={"png"}
+              />
+            </GradientCard>
+          }
         />
         <DoubleCard
           firstContent={
@@ -95,7 +115,20 @@ export const QuickStartSection = () => {
               ]}
             />
           }
-          secondContent={<GradientCard type={"orange"}>Content</GradientCard>}
+          secondContent={
+            <GradientCard
+              type={"orange"}
+              className={classNames("flex", ...styles)}
+            >
+              <DynamicImage
+                width={392}
+                height={253}
+                name={"api-request"}
+                alt={"api"}
+                ext={"png"}
+              />
+            </GradientCard>
+          }
           className={"md:flex-row-reverse"}
           isReverse={true}
         />
@@ -136,7 +169,20 @@ export const QuickStartSection = () => {
               ]}
             />
           }
-          secondContent={<GradientCard type={"blue"}>Content</GradientCard>}
+          secondContent={
+            <GradientCard
+              type={"blue"}
+              className={classNames("flex", ...styles)}
+            >
+              <DynamicImage
+                width={392}
+                height={253}
+                name={"requests"}
+                alt={"Telegram message"}
+                ext={"png"}
+              />
+            </GradientCard>
+          }
         />
       </div>
     </Section>

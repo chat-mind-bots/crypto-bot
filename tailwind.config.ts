@@ -54,7 +54,7 @@ const config: Config = {
         descriptionMobile: "1fr",
       },
       gridTemplateRows: {
-        description: "345px 366px 366px 510px",
+        description: "minmax(345px, auto) 366px 366px 510px",
         descriptionMobile: "repeat(5, auto)",
       },
       gradientColorStops: {

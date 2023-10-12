@@ -1,27 +1,41 @@
 import React from "react";
 
-export const animate = (prevBoundingBox, boundingBox, children) => {
+export const animate = (
+  prevBoundingBox,
+  boundingBox,
+  children,
+  isDirectionByX,
+  opacityEnable = true,
+  isFixed = false,
+) => {
   const maxCount = React.Children.count(children);
+  // eslint-disable-next-line sonarjs/cognitive-complexity
   React.Children.forEach(children, (child, index) => {
     const domNode = child.ref.current;
     const firstBox = prevBoundingBox[child.key];
     const lastBox = boundingBox[child.key];
     const changeInX = firstBox.left - lastBox.left;
-    if (changeInX) {
+    const changeInY = firstBox.top - lastBox.top;
+    if (isFixed || changeInX || changeInY) {
       requestAnimationFrame(() => {
-        // Before the DOM paints, invert child to old position
-        domNode.style.transform = `translateX(${changeInX}px)`;
-        if (index === maxCount - 1) {
+        if (isDirectionByX) {
+          domNode.style.transform = `translateX(${changeInX}px)`;
+        }
+        if (!isDirectionByX) {
+          domNode.style.transform = `translateY(${changeInY}px)`;
+        }
+        if (opacityEnable && index === maxCount - 1) {
           domNode.style.opacity = 0.5;
         }
         domNode.style.transition = "transform 0s";
 
         requestAnimationFrame(() => {
-          // After the previous frame, remove
           // the transistion to play the animation
           domNode.style.transform = "";
           domNode.style.transition = `transform 500ms, opacity 500ms`;
-          domNode.style.opacity = 1;
+          if (opacityEnable) {
+            domNode.style.opacity = 1;
+          }
         });
       });
     }

@@ -27,6 +27,7 @@ const slides: ISliderDescriptionProps[] = [
     ),
     description:
       "Immediately deliver digital products and services to your users.",
+    imageName: "instant-sales",
   },
   {
     title: (
@@ -38,6 +39,7 @@ const slides: ISliderDescriptionProps[] = [
       </>
     ),
     description: "Automatically unlock exclusive content to your users.",
+    imageName: "channel-integration",
   },
   {
     title: (
@@ -50,6 +52,7 @@ const slides: ISliderDescriptionProps[] = [
     ),
     description:
       "Receive successful payment notifications in real-time. Integrate to any scenario of your service.",
+    imageName: "endless-customization",
   },
 ];
 
@@ -74,8 +77,10 @@ export const SwiperComponent: FC<IOwnProps> = ({ isMobileView }) => {
       >
         <Content />
         {slides.map((slide, index) => (
-          <SwiperSlide key={`swiper-slide-${index}`}>
-            <p>{index}</p>
+          <SwiperSlide
+            key={`swiper-slide-${index}`}
+            className={classNames("relative", "flex", "justify-center")}
+          >
             <Description {...slide} />
           </SwiperSlide>
         ))}

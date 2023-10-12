@@ -7,6 +7,7 @@ import { FC, ReactNode } from "react";
 export interface ISliderDescriptionProps {
   title: ReactNode;
   description: ReactNode;
+  imageName?: string;
 }
 
 export const Description: FC<ISliderDescriptionProps> = ({

@@ -46,9 +46,7 @@ const Avatar: FC<IOwnProps> = ({
             "scale-110": isHoverable && isHover,
           },
           "w-[56px]",
-          "xl:w-[96px]",
-          "lg:w-[80px]",
-          "md:w-[64px]",
+          "md:w-[96px]",
         )}
       >
         <DynamicISvg

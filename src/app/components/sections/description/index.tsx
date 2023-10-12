@@ -1,9 +1,12 @@
 import classNames from "classnames";
 import { Card } from "app/components/ui-kit/card";
 import { Link } from "app/components/ui-kit/link";
-import Exchange from "app/components/animations/exchange";
+import Index from "app/components/animations/exchange";
 import Avatar from "app/components/ui-kit/avatar";
 import { Section } from "app/components/ui-kit/section";
+import PaymentStatistic from "app/components/animations/payment-statistic";
+import SendCoin from "app/components/animations/send-coin";
+import { DynamicImage } from "app/components/images/dynamic-image";
 
 export const DescriptionSection = () => {
   const coins: Array<{
@@ -54,10 +57,15 @@ export const DescriptionSection = () => {
               className={classNames(
                 "flex",
                 "flex-wrap",
-                "justify-start",
-                "gap-2",
-                "lg:gap-7",
-                "xl:justify-between",
+                // "items-center",
+                // "content-center",
+                // "justify-items-center",
+                // "justify-start",
+                "gap-[12px]",
+                "md:gap-[45px]",
+                // "lg:gap-7",
+                "justify-center",
+                "md:justify-between",
               )}
             >
               {coins.map(({ iconName, altName, description }) => (
@@ -91,6 +99,15 @@ export const DescriptionSection = () => {
               , go to Crypto Pay and tap Create App to get API Token
             </>
           }
+          topContent={
+            <DynamicImage
+              height={62}
+              width={223}
+              alt={"Create Application"}
+              ext={"png"}
+              name={"create-app"}
+            />
+          }
           className={"grid-in-click"}
         />
         <Card
@@ -112,6 +129,7 @@ export const DescriptionSection = () => {
               and My Apps, App Name to get Statistics
             </>
           }
+          topContent={<PaymentStatistic />}
           className={"grid-in-stat"}
         />
         <Card
@@ -127,11 +145,12 @@ export const DescriptionSection = () => {
               API method
             </>
           }
-          topContent={<Exchange />}
+          topContent={<Index />}
           className={classNames("grid-in-exchange", "items-center")}
         />
         <Card
           title={"Send coins to users"}
+          topContent={<SendCoin />}
           description={
             <>
               Automate payouts to users with{" "}
@@ -143,10 +162,19 @@ export const DescriptionSection = () => {
               API method
             </>
           }
-          className={"grid-in-send"}
+          className={classNames("grid-in-send", "md:pt-0", "pt-0")}
         />
         <Card
           title={"Anonymous payments"}
+          topContent={
+            <DynamicImage
+              height={200}
+              width={400}
+              ext={"png"}
+              alt={"app message"}
+              name={"image-commission"}
+            />
+          }
           description={
             <>
               Use allow_anonymous parameter in{" "}
