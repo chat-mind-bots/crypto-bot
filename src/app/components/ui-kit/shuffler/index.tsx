@@ -10,10 +10,18 @@ import { animate } from "app/helpers/animate";
 interface IShufflerProps {
   direction: ShuffleDirectionEnum;
   children: ReactElement[];
-  className: string;
+  className?: string;
+  isFixed?: boolean;
+  isOpacityEnable?: boolean;
 }
 
-export const Shuffler: FC<IShufflerProps> = ({ children, className }) => {
+export const Shuffler: FC<IShufflerProps> = ({
+  children,
+  className,
+  direction,
+  isFixed,
+  isOpacityEnable,
+}) => {
   const [boundingBox, setBoundingBox] = useState<Record<string, DOMRect>>({});
   const [prevBoundingBox, setPrevBoundingBox] = useState<
     Record<string, DOMRect>
@@ -40,7 +48,14 @@ export const Shuffler: FC<IShufflerProps> = ({ children, className }) => {
   useEffect(() => {
     const hasPrevBoundingBox = Object.keys(prevBoundingBox).length;
     if (hasPrevBoundingBox) {
-      animate(prevBoundingBox, boundingBox, children);
+      animate(
+        prevBoundingBox,
+        boundingBox,
+        children,
+        direction === ShuffleDirectionEnum.HORIZONTAL,
+        isOpacityEnable,
+        isFixed,
+      );
     }
   }, [boundingBox, prevBoundingBox, children]);
 
