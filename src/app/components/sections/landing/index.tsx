@@ -38,9 +38,11 @@ export const LandingSection = () => {
               "gap-[12px]",
               "items-center",
               "md:items-start",
+              "text-center",
+              "md:text-left",
             )}
           >
-            <BaseText className={classNames("text-center", "md:text-left")}>
+            <BaseText>
               Seamlessly accept crypto payment
               <br />
               in your Telegram bots and services.
@@ -50,6 +52,15 @@ export const LandingSection = () => {
               text={"Get started "}
               href={"https://google.com/get_started"}
             />
+            <DynamicPng
+              name={"photo-bots"}
+              width={352}
+              height={96}
+              sizes="(max-width: 768px) 100%"
+              alt={"Phone"}
+              priority={true}
+            />
+            <BaseText>Popular bots use Crypto Pay</BaseText>
           </div>
         </div>
 
