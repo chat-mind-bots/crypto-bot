@@ -25,9 +25,9 @@ export const DescriptionSection = () => {
       <div
         className={classNames(
           "grid",
-          "md:grid-areas-description",
-          "md:grid-cols-description",
-          "md:grid-rows-description",
+          "lg:grid-areas-description",
+          "lg:grid-cols-description",
+          "lg:grid-rows-description",
           "grid-areas-descriptionMobile",
           "grid-cols-descriptionMobile",
           "grid-rows-descriptionMobile",

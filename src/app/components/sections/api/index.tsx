@@ -40,7 +40,14 @@ export const Api = () => {
             className={classNames("w-auto", "h-full")}
           />
         </div>
-        <div className={classNames("absolute", "top-0", "h-full", "md:hidden")}>
+        <div
+          className={classNames(
+            "absolute",
+            "top-0",
+            "h-full",
+            "min-[375px]:hidden",
+          )}
+        >
           <DynamicPng
             name={"crypto-api-mobile"}
             alt={"crypto-api-mobile image"}
