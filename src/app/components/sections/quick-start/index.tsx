@@ -60,7 +60,7 @@ export const QuickStartSection = () => {
               ]}
             />
           }
-          secondContent={<GradientCard type={"violet"} />}
+          secondContent={<GradientCard type={"violet"}>Content</GradientCard>}
         />
         <DoubleCard
           firstContent={
@@ -92,7 +92,7 @@ export const QuickStartSection = () => {
               ]}
             />
           }
-          secondContent={<GradientCard type={"orange"} />}
+          secondContent={<GradientCard type={"orange"}>Content</GradientCard>}
           className={"md:flex-row-reverse"}
           isReverse={true}
         />
@@ -133,7 +133,7 @@ export const QuickStartSection = () => {
               ]}
             />
           }
-          secondContent={<GradientCard type={"blue"} />}
+          secondContent={<GradientCard type={"blue"}>Content</GradientCard>}
         />
       </div>
     </Section>

@@ -15,28 +15,67 @@ export const Description: FC<ISliderDescriptionProps> = ({
 }) => {
   return (
     <div
-      className={classNames("flex", "flex-col", "md:gap-[32px]", "gpa-[54px]")}
+      className={classNames(
+        "flex",
+        "md:flex-row",
+        "flex-col",
+        "justify-end",
+        "w-full",
+        "h-full",
+        "items-center",
+      )}
     >
       <div
         className={classNames(
           "flex",
           "flex-col",
           "md:gap-[32px]",
-          "gpa-[24px]",
-          "md:max-w-[488px]",
+          "gap-[54px]",
+          "md:w-[50%]",
           "w-full",
+          "pb-[81px]",
+          "md:pb-0",
+          "items-center",
+          "md:items-start",
         )}
       >
-        <H2 className={classNames("text-white", "dark:text-white")}>{title}</H2>
-        <BaseText className={classNames("text-white", "dark:text-white")}>
-          {description}
-        </BaseText>
+        <div
+          className={classNames(
+            "flex",
+            "flex-col",
+            "md:gap-[32px]",
+            "gap-[24px]",
+            "md:max-w-[488px]",
+            "w-full",
+          )}
+        >
+          <H2
+            className={classNames(
+              "text-white",
+              "dark:text-white",
+              "text-center",
+              "md:text-left",
+            )}
+          >
+            {title}
+          </H2>
+          <BaseText
+            className={classNames(
+              "text-white",
+              "dark:text-white",
+              "text-center",
+              "md:text-left",
+            )}
+          >
+            {description}
+          </BaseText>
+        </div>
+        <Button
+          variant={"primary"}
+          text={"Get started"}
+          href={"https://google.com/get_started"}
+        />
       </div>
-      <Button
-        variant={"primary"}
-        text={"Get started"}
-        href={"https://google.com/get_started"}
-      />
     </div>
   );
 };

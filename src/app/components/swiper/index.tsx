@@ -1,5 +1,5 @@
 "use client";
-import { Pagination } from "swiper/modules";
+import { Pagination, Mousewheel } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -13,6 +13,7 @@ import {
 import classNames from "classnames";
 import { SwiperNavigation } from "app/components/swiper/navigation";
 import { FC } from "react";
+import { Content } from "app/components/swiper/content";
 
 const slides: ISliderDescriptionProps[] = [
   {
@@ -61,7 +62,8 @@ export const SwiperComponent: FC<IOwnProps> = ({ isMobileView }) => {
     <div className={classNames("md:h-[488px]", "h-[718px]")}>
       <Swiper
         direction={isMobileView ? "horizontal" : "vertical"}
-        modules={[Pagination]}
+        modules={[Pagination, Mousewheel]}
+        mousewheel={true}
         className={classNames(
           "md:h-[488px]",
           "h-[718px]",
@@ -71,6 +73,7 @@ export const SwiperComponent: FC<IOwnProps> = ({ isMobileView }) => {
         )}
         slidesPerView={1}
       >
+        <Content />
         {slides.map((slide, index) => (
           <SwiperSlide key={`swiper-slide-${index}`}>
             <Description {...slide} />

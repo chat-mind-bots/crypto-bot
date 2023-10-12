@@ -4,6 +4,7 @@ import { FC, useEffect, useState } from "react";
 import { generateArrayNumbers } from "utils/generate-array-numbers";
 import { Stick } from "app/components/swiper/navigation/stick";
 import { useSwiper } from "swiper/react";
+import { Number } from "app/components/swiper/navigation/number";
 
 interface IOwnProps {
   slidesCount: number;
@@ -38,10 +39,12 @@ export const SwiperNavigation: FC<IOwnProps> = ({ slidesCount }) => {
         "z-10",
         "flex",
         "md:flex-col",
+        "items-center",
         "justify-center",
         "gap-[12px]",
       )}
     >
+      <Number>1</Number>
       {steps.map((step) => (
         <Stick
           activeIndex={activeIndex}
@@ -50,6 +53,7 @@ export const SwiperNavigation: FC<IOwnProps> = ({ slidesCount }) => {
           key={`pagination-step-${step}`}
         />
       ))}
+      <Number>{slidesCount + 1}</Number>
     </div>
   );
 };
