@@ -21,7 +21,7 @@ export const DescriptionSection = () => {
     { iconName: "bnb", altName: "BNB logo", description: "BNB" },
   ];
   return (
-    <Section>
+    <Section id={"features"}>
       <div
         className={classNames(
           "grid",

@@ -9,7 +9,10 @@ import { Link } from "app/components/ui-kit/link";
 
 export const QuickStartSection = () => {
   return (
-    <Section className={classNames("bg-bgLight", "dark:bg-bgDark")}>
+    <Section
+      className={classNames("bg-bgLight", "dark:bg-bgDark")}
+      id={"how-to-start"}
+    >
       <div className={classNames("grid", "gap-[24px]", "md:gap-[40px]")}>
         <PageHeader
           title={

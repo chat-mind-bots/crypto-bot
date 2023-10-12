@@ -4,9 +4,10 @@ import classNames from "classnames";
 interface IOwnProps {
   children: ReactNode;
   className?: string;
+  id?: string;
 }
 
-export const Section: FC<IOwnProps> = ({ children, className }) => {
+export const Section: FC<IOwnProps> = ({ children, className, id }) => {
   return (
     <section
       className={classNames(
@@ -18,6 +19,7 @@ export const Section: FC<IOwnProps> = ({ children, className }) => {
         "gap-[80px]",
         className,
       )}
+      id={id}
     >
       <div
         className={classNames(

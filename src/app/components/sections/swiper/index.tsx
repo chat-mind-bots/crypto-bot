@@ -13,6 +13,7 @@ export const Swiper = () => {
   return (
     <Section
       className={classNames("bg-darkBlue", "dark:bg-bgDark", "md:py-[196px]")}
+      id={"cases"}
     >
       <SwiperComponent isMobileView={!!isMobileView} />
     </Section>
