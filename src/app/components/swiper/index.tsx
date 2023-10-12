@@ -67,9 +67,7 @@ export const SwiperComponent: FC<IOwnProps> = ({ isMobileView }) => {
         className={classNames(
           "lg:h-[488px]",
           "h-[718px]",
-          "lg:w-auto",
-          "w-full",
-          "max-w-[100%]",
+          "w-auto",
           "relative",
         )}
         slidesPerView={1}
