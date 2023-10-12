@@ -7,12 +7,18 @@ export const Swiper = () => {
   const headersList = headers();
   const userAgent = headersList.get("user-agent");
   const isMobileView = userAgent!.match(
-    /Android|BlackBerry|iPhone|iPod|Opera Mini|IEMobile|WPDesktop/i,
+    /Android|BlackBerry|iPhone|IPad|iPod|Opera Mini|IEMobile|WPDesktop/i,
   );
 
   return (
     <Section
-      className={classNames("bg-darkBlue", "dark:bg-bgDark", "md:py-[196px]")}
+      className={classNames(
+        "bg-darkBlue",
+        "dark:bg-bgDark",
+        "md:py-[196px]",
+        "px-0",
+        "mx-[20px]",
+      )}
     >
       <SwiperComponent isMobileView={!!isMobileView} />
     </Section>

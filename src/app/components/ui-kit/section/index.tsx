@@ -19,7 +19,15 @@ export const Section: FC<IOwnProps> = ({ children, className }) => {
         className,
       )}
     >
-      <div className={classNames("max-w-[1200px]", "w-full")}>{children}</div>
+      <div
+        className={classNames(
+          "min-[1240px]:max-w-[1200px]",
+          "max-w-[calc(100vw_-_40px)]",
+          "w-full",
+        )}
+      >
+        {children}
+      </div>
     </section>
   );
 };
