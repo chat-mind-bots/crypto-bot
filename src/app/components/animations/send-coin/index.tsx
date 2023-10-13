@@ -41,7 +41,14 @@ const SendCoin = () => {
         ext={"png"}
         sizes={sizes}
         alt={"mockup"}
-        className={classNames("w-full", "h-full", "absolute", "top-0")}
+        className={classNames(
+          "w-full",
+          "top-0",
+          "mt-[20px]",
+          "md:mt-0",
+          "md:pl-[56px]",
+          "md:pr-[56px]",
+        )}
         name={"half-mockup"}
       />
       <Shuffler
@@ -50,9 +57,15 @@ const SendCoin = () => {
           "absolute",
           "top-0",
           "justify-center",
-          "relative",
+          "absolute",
           "w-full",
           "h-full",
+          "pl-[35px]",
+          "pr-[35px]",
+          "mt-[20px]",
+          "md:mt-0",
+          "md:pl-[106px]",
+          "md:pr-[106px]",
         )}
         direction={ShuffleDirectionEnum.VERTICAL}
         isOpacityEnable={false}
@@ -64,7 +77,6 @@ const SendCoin = () => {
               key={`send-coin--${messageName}`}
               ref={createRef()}
               className={classNames(
-                "absolute",
                 index === elems.length - 1 ? "opacity-100" : "opacity-50",
               )}
               style={{
