@@ -44,7 +44,7 @@ const PaymentStatistic = () => {
   }, [elems]);
   const sizes = "(max-width: 768px) 100%";
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center h-screen max-h-[500px] md:max-h-[500px]">
       <div className={classNames("relative", "w-full", "h-full")}>
         <DynamicImage
           name={background.imageName}
