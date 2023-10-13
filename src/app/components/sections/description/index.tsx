@@ -48,7 +48,7 @@ export const DescriptionSection = () => {
                 text={"GetInvoice"}
                 title={"Get invoice method"}
                 href={"https://google.com/"}
-              />{" "}
+              />
               method
             </>
           }
@@ -101,13 +101,15 @@ export const DescriptionSection = () => {
             </>
           }
           topContent={
-            <DynamicImage
-              height={62}
-              width={223}
-              alt={"Create Application"}
-              ext={"png"}
-              name={"create-app"}
-            />
+            <div className={classNames("flex", "justify-center")}>
+              <DynamicImage
+                height={62}
+                width={223}
+                alt={"Create Application"}
+                ext={"png"}
+                name={"create-app"}
+              />
+            </div>
           }
           className={"grid-in-click"}
         />
