@@ -31,13 +31,13 @@ const SendCoin = () => {
   const [animationStart, setAnimationStart] = useState(false);
 
   const [initialBlock, blockApi] = useSpring(() => ({
-    config: { duration: 1000 },
+    config: { duration: 500 },
     from: { y: 0, opacity: animationStart ? 0 : 1, width: 398 },
   }));
 
   console.log(initialBlock, blockApi);
   const [copyBlock, copyBlockApi] = useSpring(() => ({
-    config: { duration: 1000 },
+    config: { duration: 500 },
     from: { y: -20, opacity: 0.1, width: 350 },
   }));
 
