@@ -49,7 +49,7 @@ export const DescriptionSection = () => {
                 text={"GetInvoice"}
                 title={"Get invoice method"}
                 href={"https://google.com/"}
-              />
+              />{" "}
               method
             </>
           }
