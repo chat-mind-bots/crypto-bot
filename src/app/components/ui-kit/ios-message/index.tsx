@@ -42,7 +42,9 @@ const IosMessage = ({
           className={classNames("flex", "gap-[10px]", "flex-col", "mt-[7px]")}
         >
           <div className={"text-[13px]"}>{description}</div>
-          <div className={"text-[13px]"}>{secondaryDescription}</div>
+          <div className={classNames("text-[13px]", "mb-[5px]")}>
+            {secondaryDescription}
+          </div>
         </div>
       </div>
       <div>now</div>

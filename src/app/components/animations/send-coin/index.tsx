@@ -2,8 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { DynamicImage } from "app/components/images/dynamic-image";
 import classNames from "classnames";
-import { animated, useSpring } from "@react-spring/web";
-import shuffleArray from "app/helpers/shuffle-array.helper";
 import IosMessage from "app/components/ui-kit/ios-message";
 
 const botMessages: Array<{
@@ -26,71 +24,29 @@ const botMessages: Array<{
 
 const SendCoin = () => {
   const sizes = "(max-width: 768px) 100%";
-  const [elems, setElems] = useState(botMessages);
-  const [lastElem, setLastElem] = useState(elems[0]);
-  const [animationStart, setAnimationStart] = useState(false);
+  const [activeElemIndex, setActiveElemIndex] = useState(0);
+  const [prevActive, sePrevActive] = useState(-1);
 
-  const [initialBlock, blockApi] = useSpring(() => ({
-    config: { duration: 500 },
-    from: { y: 0, opacity: animationStart ? 0 : 1, width: 398 },
-  }));
-
-  console.log(initialBlock, blockApi);
-  const [copyBlock, copyBlockApi] = useSpring(() => ({
-    config: { duration: 500 },
-    from: { y: -20, opacity: 0.1, width: 350 },
-  }));
-
-  const handleStart = () => {
-    setAnimationStart(true);
-    blockApi.start({
-      to: [
-        // { y: 0, opacity: 1 },
-        {
-          y: -20,
-          opacity: 0.8,
-          width: 350,
-          onStart: handleContinue,
-          onRest: () => {
-            setLastElem(elems[0]);
-          },
-        },
-        {
-          y: -20,
-          opacity: 0,
-        },
-        {
-          y: 10,
-          opacity: 1,
-          width: 350,
-          immediate: true,
-          onStart: () => {
-            onShuffle();
-          },
-        },
-        { opacity: 1, width: 398 },
-      ],
-    });
-  };
-  const handleContinue = () => {
-    copyBlockApi.start({
-      to: [
-        { y: -20, opacity: 0, width: 350 },
-        { y: -20, opacity: 0.5, width: 350 },
-      ],
-    });
+  const counter = <T,>(activeNum: number, arr: Array<T>) => {
+    return {
+      prevActive: activeNum,
+      activeNum: activeNum > arr.length - 1 ? 0 : activeNum + 1,
+    };
   };
 
-  const onShuffle = () => {
-    setElems(shuffleArray(elems));
+  const handleOnStart = () => {
+    const { activeNum, prevActive } = counter(activeElemIndex, botMessages);
+    setActiveElemIndex(activeNum);
+    sePrevActive(prevActive);
   };
 
   useEffect(() => {
-    const interval = setInterval(handleStart, 2500);
+    const interval = setInterval(handleOnStart, 1700);
     return () => {
       clearInterval(interval);
     };
-  }, [elems, lastElem]);
+  }, [activeElemIndex]);
+  console.log(activeElemIndex);
   return (
     <div
       className={classNames(
@@ -119,67 +75,33 @@ const SendCoin = () => {
         name={"half-mockup"}
       />
       <div className={classNames("absolute", "flex", "justify-center")}>
-        <animated.div
-          className={classNames(
-            "absolute",
-            "bottom-[0]",
-            "w-full",
-            "bottom-0",
-            "ml-[56px]",
-            "mr-[56px]",
-            "min-w-[212px]",
-            "max-w-[398px]",
-            "min-h-[76px]",
-            "max-h-[125px]",
-            "rounded-[20px]",
-            "bg-messageBgLight",
-            "dark:bg-messageBgDark",
-          )}
-          style={{
-            height: 125,
-            zIndex: 1,
-            ...initialBlock,
-          }}
-        >
-          {/* <ButtonText className={classNames("text-dark", "dark:text-white")}>*/}
-          {/*  {elems[0]}*/}
-          {/* </ButtonText>*/}
-          <IosMessage
-            title={"Crypto bot"}
-            description={elems[0].description}
-            icon={"message-icon"}
-            iconAlt={"ios message"}
-            secondaryDescription={elems[0].secondaryDescription}
-          />
-        </animated.div>
-        <animated.div
-          className={classNames(
-            "absolute",
-            "w-full",
-            "bottom-0",
-            "ml-[56px]",
-            "mr-[56px]",
-            "min-w-[212px]",
-            "max-w-[398px]",
-            "min-h-[76px]",
-            "max-h-[125px]",
-            "rounded-[20px]",
-            "bg-bgLight",
-            "dark:bg-bgDark",
-          )}
-          style={{
-            height: 125,
-            ...copyBlock,
-          }}
-        >
-          <IosMessage
-            title={"Crypto bot"}
-            description={lastElem.description}
-            icon={"message-icon"}
-            iconAlt={"ios message"}
-            secondaryDescription={lastElem.secondaryDescription}
-          />
-        </animated.div>
+        {botMessages.map((elem, index) => {
+          return (
+            <div
+              key={`message--${elem.description}`}
+              className={classNames(
+                "bg-messageBgLight",
+                "dark:bg-messageBgDark",
+                "absolute",
+                "rounded-[13px]",
+                index === activeElemIndex
+                  ? "transition"
+                  : index === prevActive
+                  ? "onAnimation"
+                  : "transition endAnimation",
+                "bottom-0",
+              )}
+            >
+              <IosMessage
+                iconAlt={"iOS message"}
+                icon={"message-icon"}
+                title={"Crypto bot"}
+                description={elem.description}
+                secondaryDescription={elem.secondaryDescription}
+              />
+            </div>
+          );
+        })}
       </div>
       {/* <Shuffler*/}
       {/* className={classNames(*/}
