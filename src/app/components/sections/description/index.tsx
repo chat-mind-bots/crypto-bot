@@ -66,7 +66,7 @@ export const DescriptionSection = () => {
                 "md:gap-[45px]",
                 // "lg:gap-7",
                 "justify-center",
-                "md:justify-between",
+                // "md:justify-between",
               )}
             >
               {coins.map(({ iconName, altName, description }) => (

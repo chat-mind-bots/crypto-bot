@@ -109,6 +109,7 @@ const SendCoin = () => {
         alt={"mockup"}
         className={classNames(
           "w-full",
+          "max-w-[474px]",
           "top-0",
           "mt-[20px]",
           "md:mt-0",
@@ -125,21 +126,20 @@ const SendCoin = () => {
             key={message.description}
             className={classNames(
               "absolute",
-              "bottom-[0]",
               "w-full",
-              "bottom-0",
+              "top-[-60px]",
+              "md:top-[-90px]",
               "ml-[56px]",
               "mr-[56px]",
-              "min-w-[212px]",
+              "min-w-[208px]",
               "max-w-[398px]",
-              "min-h-[76px]",
+              "min-h-[60px]",
               "max-h-[125px]",
               "rounded-[20px]",
               "bg-messageBgLight",
               "dark:bg-messageBgDark",
             )}
             style={{
-              height: 125,
               width: "100%",
               ...styles[index],
             }}

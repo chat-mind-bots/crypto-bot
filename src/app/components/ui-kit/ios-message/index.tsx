@@ -22,30 +22,52 @@ const IosMessage = ({
         "flex",
         "relative",
         "h-full",
-        "px-[19px]",
-        "mt-[10px]",
-        "gap-[8px]",
+        "mt-[5px]",
+        "px-[5px]",
+        "gap-[5px]",
+        "h-[90px]",
+        "md:px-[19px]",
+        "md:mt-[10px]",
+        "md:gap-[8px]",
+        "md:h-[125px]",
       )}
     >
       <div className={classNames("flex", "items-center")}>
         <DynamicPng
-          className={"min-w-[49px]"}
+          className={classNames(
+            "max-w-[49px]",
+            "min-w-[25px]",
+            "w-[25px]",
+            "md:w-[49px]",
+          )}
           alt={iconAlt}
           width={49}
           height={47}
           name={icon}
         />
       </div>
-      <div className={"min-w-[220px]"}>
-        <div className={"text-[16px]"}>{title}</div>
+      <div className={classNames("md:w-full", "w-[minmax(150px, 100%)]")}>
+        <div className={classNames("text-[11px]", "md:text-[16px]")}>
+          {title}
+        </div>
         <div
-          className={classNames("flex", "gap-[10px]", "flex-col", "mt-[7px]")}
+          className={classNames(
+            "flex",
+            "gap-[10px]",
+            "flex-col",
+            "mt-[7px]",
+            "md:w-full",
+          )}
         >
-          <div className={"text-[13px]"}>{description}</div>
-          <div className={"text-[13px]"}>{secondaryDescription}</div>
+          <div className={classNames("text-[11px]", "md:text-[15px]")}>
+            {description}
+          </div>
+          <div className={classNames("text-[13px]", "md:text-[15px]")}>
+            {secondaryDescription}
+          </div>
         </div>
       </div>
-      <div>now</div>
+      <div className={classNames("text-[12px]", "md:text-[13px]")}>now</div>
     </div>
   );
 };
