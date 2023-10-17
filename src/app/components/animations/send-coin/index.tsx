@@ -18,7 +18,7 @@ const botMessages: Array<{
     secondaryDescription: "Design contest award",
   },
   {
-    description: "You recived 8478 TON ($10000) from @CryptoBot #A878",
+    description: "You received 8478 TON ($10000) from @CryptoBot #A878",
     secondaryDescription: "Congrats! You are a winner ",
   },
 ];
@@ -43,7 +43,7 @@ const SendCoin = () => {
     display: "block",
     y: 20,
     opacity: 0,
-    zIndex: -1,
+    zIndex: 2,
   };
 
   const [firstBlock, apiFirstBlock] = useSpring(() => ({
@@ -76,7 +76,10 @@ const SendCoin = () => {
   };
 
   const thirdTick = () => {
-    apiFirstBlock.start({ to: { ...initial }, delay: 4000 });
+    apiFirstBlock.start({
+      to: { ...initial },
+      delay: 4000,
+    });
     apiSecondBlock.start({ to: { ...end }, delay: 4000 });
     apiThirdBlock.start({ to: { ...hidden }, delay: 4000 });
   };
