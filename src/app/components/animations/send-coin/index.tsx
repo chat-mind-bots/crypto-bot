@@ -48,15 +48,15 @@ const SendCoin = () => {
 
   const [firstBlock, apiFirstBlock] = useSpring(() => ({
     from: { ...initial },
-    config: { duration: 1000 },
+    config: { duration: 500 },
   }));
   const [secondBlock, apiSecondBlock] = useSpring(() => ({
     from: { ...end },
-    config: { duration: 1000 },
+    config: { duration: 500 },
   }));
   const [thirdBlock, apiThirdBlock] = useSpring(() => ({
     from: { ...end },
-    config: { duration: 1000 },
+    config: { duration: 500 },
   }));
 
   const styles = [firstBlock, secondBlock, thirdBlock];
