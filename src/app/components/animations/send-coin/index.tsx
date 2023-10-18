@@ -2,8 +2,9 @@
 import React, { useEffect } from "react";
 import { DynamicImage } from "app/components/images/dynamic-image";
 import classNames from "classnames";
-import { animated, useSpring } from "@react-spring/web";
+import { animated } from "@react-spring/web";
 import IosMessage from "app/components/ui-kit/ios-message";
+import { useMessageAnimation } from "app/hooks/useMessageAnimation";
 
 const botMessages: Array<{
   description: string;
@@ -24,65 +25,7 @@ const botMessages: Array<{
 ];
 
 const SendCoin = () => {
-  const sizes = "(max-width: 768px) 100%";
-
-  const initial = {
-    opacity: 1,
-    y: 0,
-    zIndex: 2,
-  };
-
-  const hidden = {
-    y: -20,
-    scale: 0.9,
-    opacity: 0.2,
-    zIndex: 0,
-  };
-
-  const end = {
-    display: "block",
-    y: 20,
-    opacity: 0,
-    zIndex: 2,
-  };
-
-  const [firstBlock, apiFirstBlock] = useSpring(() => ({
-    from: { ...initial },
-    config: { duration: 500 },
-  }));
-  const [secondBlock, apiSecondBlock] = useSpring(() => ({
-    from: { ...end },
-    config: { duration: 500 },
-  }));
-  const [thirdBlock, apiThirdBlock] = useSpring(() => ({
-    from: { ...end },
-    config: { duration: 500 },
-  }));
-
-  const styles = [firstBlock, secondBlock, thirdBlock];
-
-  const firstTick = () => {
-    apiFirstBlock.start({ to: { ...hidden } });
-    apiSecondBlock.start({ to: { ...initial } });
-    apiThirdBlock.start({ to: { ...end } });
-    secondTick();
-  };
-
-  const secondTick = () => {
-    apiFirstBlock.start({ to: { ...end }, delay: 2000 });
-    apiSecondBlock.start({ to: { ...hidden }, delay: 2000 });
-    apiThirdBlock.start({ to: { ...initial }, delay: 2000 });
-    thirdTick();
-  };
-
-  const thirdTick = () => {
-    apiFirstBlock.start({
-      to: { ...initial },
-      delay: 4000,
-    });
-    apiSecondBlock.start({ to: { ...end }, delay: 4000 });
-    apiThirdBlock.start({ to: { ...hidden }, delay: 4000 });
-  };
+  const { styles, firstTick } = useMessageAnimation();
 
   useEffect(() => {
     const interval = setInterval(firstTick, 6000);
@@ -105,7 +48,7 @@ const SendCoin = () => {
         height={400}
         width={474}
         ext={"png"}
-        sizes={sizes}
+        sizes={"(max-width: 768px) 100%"}
         alt={"mockup"}
         className={classNames(
           "w-full",

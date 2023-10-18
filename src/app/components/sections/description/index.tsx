@@ -6,8 +6,8 @@ import Avatar from "app/components/ui-kit/avatar";
 import { Section } from "app/components/ui-kit/section";
 import PaymentStatistic from "app/components/animations/payment-statistic";
 import SendCoin from "app/components/animations/send-coin";
-import { DynamicImage } from "app/components/images/dynamic-image";
 import ButtonClick from "app/components/animations/button-click";
+import AnonymousPayment from "app/components/animations/anonymous-payment";
 
 export const DescriptionSection = () => {
   const coins: Array<{
@@ -172,13 +172,14 @@ export const DescriptionSection = () => {
         <Card
           title={"Anonymous payments"}
           topContent={
-            <DynamicImage
-              height={200}
-              width={400}
-              ext={"png"}
-              alt={"app message"}
-              name={"image-commission"}
-            />
+            // <DynamicImage
+            //   height={200}
+            //   width={400}
+            //   ext={"png"}
+            //   alt={"app message"}
+            //   name={"image-commission"}
+            // />
+            <AnonymousPayment />
           }
           description={
             <>
