@@ -1,101 +1,102 @@
 "use client";
-import React, { createRef, useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { DynamicImage } from "app/components/images/dynamic-image";
 import classNames from "classnames";
-import { Shuffler } from "app/components/ui-kit/shuffler";
-import { ShuffleDirectionEnum } from "constants/shuffle-direction.enum";
-import shuffleArray from "app/helpers/shuffle-array.helper";
+import { animated } from "@react-spring/web";
+import IosMessage from "app/components/ui-kit/ios-message";
+import { useMessageAnimation } from "app/hooks/useMessageAnimation";
 
 const botMessages: Array<{
-  messageName: string;
+  description: string;
+  secondaryDescription?: string;
 }> = [
   {
-    messageName: "send-coins1",
+    description: "You received 2300 TON ($1000) from @CryptoBot #A820",
+    secondaryDescription: "We appreciate your interest",
   },
-  // {
-  //   messageName: "send-coins2",
-  // },
-  // {
-  //   messageName: "send-coins3",
-  // },
+  {
+    description: "You received 3448 TON ($5000) from @CryptoBot #A777",
+    secondaryDescription: "Design contest award",
+  },
+  {
+    description: "You received 8478 TON ($10000) from @CryptoBot #A878",
+    secondaryDescription: "Congrats! You are a winner ",
+  },
 ];
 
 const SendCoin = () => {
-  const [elems, setElems] = useState(botMessages);
-  const sizes = "(max-width: 768px) 100%";
-  const onShuffle = () => {
-    setElems(shuffleArray(elems, "asc"));
-  };
+  const { styles, firstTick } = useMessageAnimation();
 
   useEffect(() => {
-    const interval = setInterval(onShuffle, 2500);
+    const interval = setInterval(firstTick, 6000);
     return () => {
       clearInterval(interval);
     };
-  }, [elems]);
+  }, [firstTick]);
   return (
-    <div className={classNames("relative", "w-full", "h-full")}>
+    <div
+      className={classNames(
+        "relative",
+        "flex",
+        "justify-center",
+        "flex-col",
+        "w-full",
+        "items-center",
+      )}
+    >
       <DynamicImage
         height={400}
         width={474}
         ext={"png"}
-        sizes={sizes}
+        sizes={"(max-width: 768px) 100%"}
         alt={"mockup"}
         className={classNames(
           "w-full",
+          "max-w-[474px]",
           "top-0",
           "mt-[20px]",
           "md:mt-0",
-          "md:pl-[56px]",
-          "md:pr-[56px]",
+          // "md:pl-[56px]",
+          // "md:pr-[56px]",
         )}
         name={"half-mockup"}
       />
-      <Shuffler
-        className={classNames(
-          "flex",
-          "absolute",
-          "top-0",
-          "justify-center",
-          "absolute",
-          "w-full",
-          "h-full",
-          "pl-[35px]",
-          "pr-[35px]",
-          "mt-[20px]",
-          "md:mt-0",
-          "md:pl-[106px]",
-          "md:pr-[106px]",
-        )}
-        direction={ShuffleDirectionEnum.VERTICAL}
-        isOpacityEnable={false}
-        isFixed={false}
+      <div
+        className={classNames("absolute", "flex", "w-full", "justify-center")}
       >
-        {elems.map(({ messageName }, index) => {
-          return (
-            <div
-              key={`send-coin--${messageName}`}
-              ref={createRef()}
-              className={classNames(
-                index === elems.length - 1 ? "opacity-100" : "opacity-50",
-              )}
-              style={{
-                top: `${index * 24}px`,
-                zIndex: `${index}`,
-              }}
-            >
-              <DynamicImage
-                height={125}
-                width={320}
-                ext={"png"}
-                sizes={sizes}
-                alt={"Telegram message"}
-                name={messageName}
-              />
-            </div>
-          );
-        })}
-      </Shuffler>
+        {botMessages.map((message, index) => (
+          <animated.div
+            key={message.description}
+            className={classNames(
+              "absolute",
+              "w-full",
+              "top-[-60px]",
+              "md:top-[-90px]",
+              "ml-[56px]",
+              "mr-[56px]",
+              "min-w-[208px]",
+              "max-w-[398px]",
+              "min-h-[60px]",
+              "max-h-[125px]",
+              "rounded-[20px]",
+              "bg-messageBgLight",
+              "dark:bg-messageBgDark",
+            )}
+            style={{
+              width: "100%",
+              ...styles[index],
+            }}
+          >
+            <IosMessage
+              title={"Crypto bot"}
+              description={message.description}
+              icon={"message-icon"}
+              iconAlt={"ios message"}
+              secondaryDescription={message.secondaryDescription}
+            />
+          </animated.div>
+        ))}
+      </div>
     </div>
   );
 };

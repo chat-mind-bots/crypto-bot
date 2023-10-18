@@ -31,6 +31,8 @@ const config: Config = {
       rose: "#FCB69F",
       pink: "#FFECD2",
       purple: "#E0C3FC",
+      messageBgDark: "#222222",
+      messageBgLight: "#E8F2F8",
     },
     extend: {
       gridTemplateAreas: {
