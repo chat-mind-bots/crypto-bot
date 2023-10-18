@@ -66,10 +66,8 @@ const PaymentStatistic = () => {
             "flex",
             "w-full",
             "h-full",
-            "px-[20px]",
-            "py-[24px]",
-            "md:px-[75px]",
-            "md:py-[48px]",
+            "justify-center",
+            "items-center",
           )}
           direction={ShuffleDirectionEnum.HORIZONTAL}
           isFixed
