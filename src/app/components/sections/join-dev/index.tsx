@@ -67,7 +67,12 @@ export const JoinDev = () => {
                 iconName={iconName}
                 altName={altName}
                 description={description}
-                className={classNames("flex", "flex-col", "items-center")}
+                className={classNames(
+                  "flex",
+                  "flex-col",
+                  "items-center",
+                  "min-w-[85px]",
+                )}
               />
             );
           })}
