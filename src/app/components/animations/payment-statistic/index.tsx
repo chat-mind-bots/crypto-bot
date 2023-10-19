@@ -44,7 +44,7 @@ const PaymentStatistic = () => {
   }, [elems]);
   const sizes = "(max-width: 768px) 100%";
   return (
-    <div className="flex justify-center items-center">
+    <div className={classNames("flex justify-center items-center")}>
       <div className={classNames("relative", "w-full", "h-full")}>
         <DynamicImage
           name={background.imageName}
@@ -79,7 +79,7 @@ const PaymentStatistic = () => {
             return (
               <div
                 key={`payment-statistic--${messageName}`}
-                className={classNames("absolute")}
+                className={classNames("absolute", "max-[640px]:max-w-[231px]")}
                 ref={createRef()}
               >
                 <DynamicImage
