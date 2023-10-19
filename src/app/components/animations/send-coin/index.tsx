@@ -76,7 +76,8 @@ const SendCoin = () => {
               "max-w-fit",
               "min-h-fit",
               "md:max-w-[398px]",
-              "rounded-[20px]",
+              "rounded-[10px]",
+              "md:rounded-[20px]",
               "bg-messageBgLight",
               "dark:bg-messageBgDark",
             )}

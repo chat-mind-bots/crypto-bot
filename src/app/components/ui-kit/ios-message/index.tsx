@@ -16,6 +16,7 @@ const IosMessage = ({
   icon,
   iconAlt,
 }: MessageProps) => {
+  const mobileText = "text-[11px]";
   return (
     <div
       className={classNames(
@@ -47,27 +48,35 @@ const IosMessage = ({
         />
       </div>
       <div className={classNames("md:w-full", "w-[minmax(150px, 100%)]")}>
-        <div className={classNames("text-[11px]", "md:text-[16px]")}>
+        <div className={classNames("text-[12px]", "md:text-[16px]")}>
           {title}
         </div>
         <div
           className={classNames(
             "flex",
-            "gap-[10px]",
+            "gap-[5px]",
+            "md:gap-[10px]",
             "flex-col",
-            "mt-[7px]",
+            "md:mt-[7px]",
             "md:w-full",
           )}
         >
-          <div className={classNames("text-[11px]", "md:text-[15px]")}>
+          <div className={classNames(mobileText, "md:text-[15px]")}>
             {description}
           </div>
-          <div className={classNames("text-[13px]", "md:text-[15px]")}>
+          <div
+            className={classNames(
+              "text-[11px]",
+              "md:text-[15px]",
+              "mb-[5px]",
+              "md:mb-0]",
+            )}
+          >
             {secondaryDescription}
           </div>
         </div>
       </div>
-      <div className={classNames("text-[12px]", "md:text-[13px]")}>now</div>
+      <div className={classNames(mobileText, "md:text-[13px]")}>now</div>
     </div>
   );
 };
