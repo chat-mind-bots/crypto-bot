@@ -45,7 +45,7 @@ export const Api = () => {
             "absolute",
             "top-0",
             "h-full",
-            "min-[375px]:hidden",
+            "min-[376px]:hidden",
           )}
         >
           <DynamicPng
